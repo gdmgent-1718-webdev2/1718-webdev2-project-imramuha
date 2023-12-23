@@ -1,0 +1,74 @@
+<app-sidenav></app-sidenav>
+<div class="accountFormContainer">
+
+    <div>
+        <h4 class="accountFormHeader">Start a Bid for one of your fishes</h4>
+    </div>
+
+    <div class="accountFormBody">
+        <form *ngIf="_bid" #publishBidForm="ngForm" (submit)="publishBid()">
+            <div>               
+
+                <div class="input-field-form-container">
+                    <select required class="input-field-form" required name="fish_id"   [(ngModel)]="_bid.fish_id" #fish_id="ngModel">
+                        <option [value]='undefined' disabled selected>Choose Fish...</option>
+                        <option *ngFor="let fish of _fishes" value="{{fish.id}}">{{ fish.name }}</option>
+                    </select>
+                </div>
+
+
+
+                <div  class="input-field-form-container">
+                    <input class="input-field-form"  type="number" min="25" max="10000"  step="1"  placeholder="Minimum Bid" name="bid" required [(ngModel)]="_bid.bid" #bid="ngModel">
+                </div>
+                <div class="accountFormError" *ngIf="bid?.errors && (bid.dirty || bid.touched)">                            
+                    <div [hidden]="!bid.errors.required"> 
+                        <span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;Cannot be below zero.
+                    </div>
+                </div>
+
+
+                <div class="input-field-form-container">
+                    <input class="input-field-form" placeholder="Choose a Start Date..."  name="started_at"  [(ngModel)]="_bid.started_at" #start_at="ngModel" required matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" >
+                        <mat-datepicker-toggle class="formIcon" matSuffix [for]="picker"></mat-datepicker-toggle>   
+                    <mat-datepicker #picker></mat-datepicker> 
+                  </div>
+                <div class="accountFormError" *ngIf="started_at?.errors&& (started_at.dirty || started_at.touched)">                        
+                    <div [hidden]="!started_at.errors.required"> 
+                        <span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;Date can not be before tomorrow and after two weeks.
+                    </div>
+                </div>
+
+                <div class="input-field-form-container">
+                        <select class="input-field-form" placeholder='Hello' name="days_or_hours"  [(ngModel)]="_bid.days_or_hours" #days_or_hours="ngModel" required>
+                            <option [value]='undefined' disabled selected>Ends in Days or Hours...</option>
+                            <option value="hours">Hours</option>
+                            <option value="days">Days</option>
+                        </select>
+                        </div>                
+                        <div class="accountFormError" *ngIf="days_or_hours?.errors && (days_or_hours.dirty || days_or_hours.touched)">                            
+                            <div [hidden]="!days_or_hours.errors.required"> 
+                                <span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;You have to select one of those.
+                            </div>
+                        </div>
+
+                <div  class="input-field-form-container">
+                    <input class="input-field-form" required  type="number" min="1" max="14"  step="1"  placeholder="Amount of Days or Hours" name="ended_at" [(ngModel)]="_bid.ended_at" #ended_at="ngModel">
+                </div>
+                <div class="accountFormError" *ngIf="bid?.errors && (ended_at.dirty || ended_at.touched)">                            
+                    <div [hidden]="!ended_at.errors.required"> 
+                        <span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;Can not be blow 1 hour or more than 14 days.
+                    </div>
+                </div>
+    
+  
+            
+                <div>
+                    <button class="accountFormBtn" type="button" (click)="goBack()">CANCEL</button>
+                    <button class="accountFormBtn" type="submit" [disabled]="!publishBidForm.form.valid">ADD</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

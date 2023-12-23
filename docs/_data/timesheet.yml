@@ -1,0 +1,99 @@
+# ╔═════════╗
+# ║ Imran   ║
+# ╚═════════╝
+-
+  time: 2.00
+  task: Briefing.
+-
+  time: 5.00
+  task: Planning.
+-
+  time: 6.00
+  task: Analyse.
+-
+  time: 7.00
+  task: Concept.
+-
+  time: 3.50
+  task: Requirements.
+-
+  time: 4.50
+  task: Scenarios.
+-
+  time: 12.00
+  task: Data modeling.
+-
+  time: 4.00
+  task: Sitemaps.
+-
+  time: 4.00
+  task: Wireflows.
+-
+  time: 18.00
+  task: Screen Designs.
+-
+  time: 7.50
+  task: Style Guide.
+-
+  time: 1.00
+  task: Repositories.
+-
+  time: 2.50
+  task: Handleiding.
+-
+  time: 3.50
+  task: Deployment Guide.
+-
+  time: 1.00
+  task: Timesheet.
+-
+  time: 1.00
+  task: Deployment Guide.
+-
+  time: 09.00
+  task: Presentation.
+-
+  time: 15.50
+  task: Academische poster.
+-
+  time: 3.00
+  task: Preparing database.
+-
+  time: 8.00
+  task: Backoffice - Migrations.
+-
+  time: 5.50
+  task: Backoffice - Seeders.
+-
+  time: 6.00
+  task: Backoffice - Models.
+-
+  time: 20.00
+  task: Backoffice - Controllers & Routes.
+-
+  time: 12.00
+  task: Backoffice - Views.
+-
+  time: 18.00
+  task: Backoffice - SASS.
+-
+  time: 15.00
+  task: Backoffice - Authentication.
+-
+  time: 37.00
+  task: API - Controllers, Routes & Authentication.
+-
+  time: 09.00
+  task: Frontend - Routing & Modules.
+-
+  time: 16.50
+  task: Frontend - Services.
+-
+  time: 26.00
+  task: Frontend - Components/Pages.
+-
+  time: 27.50
+  task: Backoffice - SASS.
+-
+  time: 2.00
+  task: Frontend - Models.

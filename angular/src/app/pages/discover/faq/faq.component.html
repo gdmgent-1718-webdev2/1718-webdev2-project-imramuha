@@ -1,0 +1,98 @@
+<div class="containerInfo faq">
+    <h4 class="containerInfoTitle">Frequest Asked Questions</h4>
+
+    <div class="containerBtnFaq">
+        <button class="btnFaq" (click)="DropdownVar=1">GENERAL</button>
+        <button class="btnFaq" (click)="DropdownVar=2">AUCTIONS</button>
+        <button class="btnFaq" (click)="DropdownVar=3">PAYMENT AND SHIPPING</button>
+        <button class="btnFaq" (click)="DropdownVar=4">QUARANTINE</button>
+    </div>
+
+    <!-- GENERAL-->
+    <div class="meh">
+    <div *ngIf="DropdownVar === 1" class="dropdown-content-faq">
+        <h4 class="faqQuestion title"><strong>GENERAL</strong></h4>
+        <p (click)="DropdownsubVar=1" class="faqQuestion">1. What is Koi Auction?</p>
+        <div   class="faqAnswer" *ngIf="DropdownsubVar === 1">Koi Auction of AquaLobby is a new auction of Japanese quality Koi. We work with trusted dealers and Koi lovers from Belgium.</div>
+        <p (click)="DropdownsubVar=2" class="faqQuestion">2. Supply Return Policy</p>
+        <div    class="faqAnswer" *ngIf="DropdownsubVar === 2">Since you will be buying from a trusted seller, you might better ask for their policies when dealing with them.</div>
+        <p (click)="DropdownsubVar=3" class="faqQuestion">3. How can I change my personal information?</p>
+        <div   class="faqAnswer" *ngIf="DropdownsubVar === 3">You need to be logged in. After that click on <strong>MY ACCOUNT</strong> -> <strong>Account Settins</strong>. There you might be able to change your email, username, address. If you wish to change your password do it through the <strong>Forgot Password?</strong> option on <strong>Login</strong>form.</div>
+        <p (click)="DropdownsubVar=4" class="faqQuestion">4. How accurate is the sex information provided of the Koi?</p>
+        <div   class="faqAnswer" *ngIf="DropdownsubVar === 4">Please understand, we cannot guarantee the sex of the Koi even though we use our very best judgment with the expertise and experience we have. We try to check the signs and indication of sex, but some Koi are very difficult to distinguish between male or female. This is why even the breeders are not always accurate on the sex of their Koi.</div>
+        <p (click)="DropdownsubVar=5" class="faqQuestion">5. Why can't I log in?</p>
+        <div   class="faqAnswer" *ngIf="DropdownsubVar === 5">Are you sure you have registered? Check your email for confirmation. Incase you forgot your password, you can reset it through the <strong>Forgot Password?</strong> option on <strong>Login</strong>form. In worst scenario you might have been banned. In that case please contact us through the <strong>Contact Us</strong> form or at service&#64;aqualobby.com.</div>
+        <p (click)="DropdownsubVar=6" class="faqQuestion">6. How do I register as a dealer?</p>
+        <div   class="faqAnswer" *ngIf="DropdownsubVar === 6">Just follow the regular registration process. Because everyone can be a buyer or a seller/dealer on this platform.</div>
+    </div>
+    </div>
+
+    <!-- AUCTIONS-->
+    <div *ngIf="DropdownVar === 2" class="dropdown-content-faq">
+        <h4 class="faqQuestion title"><strong>AUCTIONS</strong></h4>
+        <p (click)="DropdownsubVar=11" class="faqQuestion">1. How does Koi Auction work?</p>
+        <div   class="faqAnswer" *ngIf="DropdownsubVar === 11">TBD.</div>
+        <p (click)="DropdownsubVar=12" class="faqQuestion">2. How do I bid in the auction?</p>
+        <div   class="faqAnswer" *ngIf="DropdownsubVar === 12">TBD.</div>
+        <p (click)="DropdownsubVar=13" class="faqQuestion">3. Can I cancel my bid? I am no longer interested in the Koi.</p>
+        <div   class="faqAnswer" *ngIf="DropdownsubVar === 13"><strong>We are sorry, but no cancellation will be accepted after submitting the bid.</strong><br/><br/> Our goal is to provide the best place for Koi hobbyists to obtain the higher quality Koi for more reasonable price. For us to achieve the goal, we set no reserve. And of course, once auction begins, we will never get involved with the auctions. </div>
+        <p (click)="DropdownsubVar=14" class="faqQuestion">4. Get a bidding advantage by using a higher maximum bid?</p>
+        <div   class="faqAnswer" *ngIf="DropdownsubVar === 14">Waiting until the closing moments of an auction dramatically decreases your chance of winning an auction due to timing, disrupted internet connection, or auction system overload.</div>
+        <p (click)="DropdownsubVar=15" class="faqQuestion">5. How do know if I win the auction?</p>
+        <div   class="faqAnswer" *ngIf="DropdownsubVar === 15">You will be notified by in your notification center/profile that you are the winner with instructions to contact the seller.</div>
+        <p (click)="DropdownsubVar=16" class="faqQuestion">6. What do I do after I win auction?</p>
+        <div   class="faqAnswer" *ngIf="DropdownsubVar === 16">We only provide a platform sellers and sell and buyers can buy, that means after the auction/bidding is over, you and the seller are responsible for contacting each other and go through with the deal.</div>
+    </div>
+
+    <!-- PAYMENT & SHIPPING-->
+    <div *ngIf="DropdownVar === 3" class="dropdown-content-faq">
+        <h4 class="faqQuestion title"><strong>PAYMENT & SHIPPING</strong></h4>
+        <p (click)="DropdownsubVar=21" class="faqQuestion">1. How does the payment process happen?</p>
+        <div class="faqAnswer" *ngIf="DropdownsubVar === 21">TBD.</div>
+        <p (click)="DropdownsubVar=22" class="faqQuestion">2. How does shipping happen?</p>
+        <div class="faqAnswer" *ngIf="DropdownsubVar === 22">TBD.</div>
+    </div>
+
+    <!-- QUARANTINE -->
+    <div *ngIf="DropdownVar === 4" class="dropdown-content-faq">
+        <h4 class="faqQuestion title"><strong>QUARANTINE</strong></h4>
+        <p  (click)="DropdownsubVar=31" class="faqQuestion">1. What should I do before I receive koi?</p>
+        <div   class="faqAnswer" *ngIf="DropdownsubVar === 31">Prepare a separate tub or tank for your koi to rest. Although it depends on the size of koi, a 100-300 gallon tank will do. You can use blue show tanks as well.<br/><br/>
+            Fill the tank with fresh dechlorinated water, well water, or better yet water from your exiting pond, providing your existing pond stock is in good condition.<br/><br/>   
+            Filtration system for the tank is ideal. If you do not have a filtration system, provide sound aeration with an air pump.<br/>          
+            Keep the water temperature at 72 F or more. If the tank was small enough, one or two aquarium heaters will do the job.<br/>          
+            Please add salt to make 0.3% concentration. (3 lb salt per 100 gallon water).
+        </div>
+        <p  (click)="DropdownsubVar=32" class="faqQuestion">2. Why do I need to quarantine?</p>
+        <div   class="faqAnswer" *ngIf="DropdownsubVar === 32">Separate quarantine tank is a Must-tool for koi hobbyists.<br /><br/>
+            It is possible that newly purchased koi still carry parasites, bacteria, fungus etc., even though we did our best to eliminate them. Also, if they are shipped to you in a box, they are usually extremely stressed and exhausted. It is important to provide them a nice surrounding so that they can recover from their journey quickly.<br/>
+            Keeping and treating new koi in the separate quarantine tank for 21 days is the best way to decrease the risk of disease before introducing them to your main pond. In addition this will give your new koi a chance to rest.<br/><br/>
+            <strong>We strongly request the quarantine of new koi to every customer who purchase koi from us.</strong></div>
+        <p  (click)="DropdownsubVar=33" class="faqQuestion">3. How do I quarantine?</p>
+        <div class="faqAnswer" *ngIf="DropdownsubVar === 33">Here are the basic supplies you will need:<br/><br/>
+            Tank<br/>
+            Net to cover the tank<br/>
+            Small filter and pump<br/>
+            Air pump<br/>
+            Test kit: ammonia, nitrite, pH and salt<br/>
+            Salt<br/>
+            Water thermometer<br/>
+            Water conditioner such as Ultimate to remove chlorine, ammonia, nitrite.<br/>
+            Heater<br/>
+        </div>
+        <p (click)="DropdownsubVar=34" class="faqQuestion">4. What should I do while my koi are in quarantine?</p>
+        <div   class="faqAnswer" *ngIf="DropdownsubVar === 34">Please observe the koi carefully for 14-21 days to see if it develops any problems.<br/><br/>
+            If you do not have the filtration system, please make partial water change every 2-3 days (about 25%). Add salt accordingly.<br/><br/>            
+            Feed digestible food to your koi every day such as Manda Fu.<br/>            
+            Check Ammonia and nitrite every day. If you find Ammonia, use Ultimate.
+        </div>
+        <p (click)="DropdownsubVar=35" class="faqQuestion">4. What should I do while my koi are in quarantine?</p>
+        <div   class="faqAnswer" *ngIf="DropdownsubVar === 35">Separate quarantine tank is a Must-tool for koi hobbyists.<br/>
+            It is possible that newly purchased koi still carry parasites, bacteria, fungus etc., even though we did our best to eliminate them. Also, if they are shipped to you in a box, they are usually extremely stressed and exhausted. It is important to provide them a nice surrounding so that they can recover from their journey quickly.<br/><br/>
+            Keeping and treating new koi in the separate quarantine tank for 21 days is the best way to decrease the risk of disease before introducing them to your main pond. In addition this will give your new koi a chance to rest.<br/><br/>
+            We strongly request the quarantine of new koi to every customer who purchase koi from us.
+        </div>
+    </div>
+    
+
+</div>

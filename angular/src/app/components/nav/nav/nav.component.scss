@@ -1,0 +1,267 @@
+@import '../../../../styles.scss';
+
+.main-site-nav {
+    left: 0;
+    top: 0 !important;
+    height: 45px;
+    width: 100%;
+    text-align: center;
+    transition: margin .1s;
+    border: 0;
+    z-index: 999;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: map-get($colors, 'slate');
+}
+
+.nav-container {
+    max-width: 100%;
+    /*margin-top: 1em;
+    top: 0px;*/
+    bottom: auto;
+    left: 0;
+    top: 0 !important;
+    background-color: inherit;
+    margin-top: 0 !important;
+    background-color: inherit;
+    margin-top: 0 !important;
+    padding: 0.115rem 0.800rem;
+    background-color: map-get($colors, 'slate');
+}
+
+.nav-items {
+    border-left: 0;
+    border-right: 0;
+}
+
+.brand {
+    display: flex;
+    width: 60%;
+    float: left;
+    line-height: 1;
+    padding-right: 4%;
+}
+
+.logo {
+    display: flex;
+    width: 100%;
+    max-width: 16.875rem;
+}
+
+.logo img {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 100%;
+    height: auto;
+}
+
+.mobile-menu {
+    display: flex;
+    float: right;
+    text-align: right;
+}
+
+.mobile-menu-icon {
+    padding: 0.815rem 0.250rem;
+    display: inline-block;
+    vertical-align: middle;
+    color: map-get($colors, 'snow');;
+    text-decoration: none;
+    font-size: 0.70rem;
+}
+
+.mobile-menu-button {
+    padding-left: 0.400rem;
+    display: inline-block;
+    vertical-align: middle;
+    color: map-get($colors, 'snow');;
+    text-decoration: none;
+    margin-right: -10px;
+}
+ 
+.nav-button {
+    width: 1.375rem;
+    height: 0.01rem;
+    padding-top: 10px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: none;
+    border: none;
+    padding: initial;
+    background-color: transparent;
+}
+
+.nav-button div {
+    width: 0.75rem;
+    height: 0.12rem;
+    background-color: map-get($colors, 'snow');
+    margin: 3px 0;
+    box-shadow: none;
+}
+
+.navigation {
+    background-color: map-get($colors, 'midnight');
+}
+
+.dekstop-nav {
+    display: none;
+    padding: 0.6rem 0.5rem 0.625rem;
+    //background-color: map-get($colors, 'midnight');;
+    height: 40px;
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255, 0.08);
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.dekstop-nav button {
+    font-size: 11px;
+    letter-spacing: 2px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.70);
+    margin: 0 1rem 0 0;
+    color: map-get($colors, 'snow');
+    &:hover { 
+        color: rgba(255,255,255,.60);
+        transition: 0.3s;
+    }
+}
+
+.dekstop-nav ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-decoration: none;
+    list-style: none;
+}
+
+.bullet:before {
+    color: map-get($colors, 'snow');
+    content:"  •  ";
+    white-space: pre;
+}
+
+.dekstop-nav li a {
+    color: map-get($colors, 'snow');
+    text-align: center;
+    padding: 0px 0px;
+    text-decoration: none;
+    list-style: none;
+    &:hover { 
+        color: rgba(255,255,255,.60);
+        transition: 0.3s;
+    }
+}
+
+.dekstopNavBtn {
+    display: block;
+    float: left;
+}
+
+.dekstopNavLink{
+    display: block; 
+    float: right;
+}
+
+.dekstopMenu {
+    display: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    a {
+    text-decoration: none;
+    list-style: none;
+    font-size: 15px;
+    letter-spacing: 2px;
+    color: map-get($colors, 'snow');
+    &:hover { 
+        color: rgba(255,255,255,.60);
+        transition: 0.3s;
+        border-bottom: 1px solid rgba(255,255,255,.60);
+    }
+    }
+    .bullet:before {
+        color: map-get($colors, 'snow');
+        content:"  •     ";
+        white-space: pre;
+    }
+}
+
+
+@include breakpoint(mobile) {
+    .mobile-menu-icon {
+        font-size: 1.20rem;
+        padding: 0.415rem 0.450rem;
+    }
+    .nav-button {
+        height: 0.3em;
+    }
+    .nav-button div {
+        width: 1.3rem;
+        height: 0.26rem;
+        margin: 3px 0; 
+        font-size: 0.10em;
+    }
+    .mobile-menu-button {
+        padding-left: 0.800rem;
+        margin-right: 5px;
+    }
+}
+
+@include breakpoint(mobilewide) {
+    .mobile-menu-icon {
+        font-size: 1.55rem;
+        padding: 0rem 0.850rem;
+    }
+    .nav-button {
+        height: 0.75em;
+    }
+    .nav-button div {
+        width: 1.6rem;
+        height: 0.26rem;
+        margin: 5px 0; 
+    }
+}
+
+@include breakpoint(tablet) {
+    .mobile-menu {
+        display: none;
+    }
+    .navigation {
+        height: 153.766px;
+    }
+    .dekstop-nav {
+        display: block;
+    }
+    .brand {
+        display: flex;
+        width: 100%;
+        float: none;
+        padding: 25px 0 0;
+    } 
+    .dekstopMenu {
+        display: flex;
+        float: none;
+        padding: 10px 0;
+        ul {
+            padding: 0;
+            margin-left: auto;
+	        margin-right: auto;
+        }
+    }
+    .dekstopMenu li {
+        display: inline;
+    }
+    .logo {
+        margin-left: auto;
+	    margin-right: auto;
+    }  
+    .main-site-nav {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    } 
+    .nav-container {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+}

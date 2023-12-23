@@ -1,0 +1,83 @@
+$base-margin: .5em;
+$base-padding: .5em;
+.table {
+  --color          : #{color-palette('default')};
+  --color-mid-light: #{color-palette('default', 'mid-light')};
+  --color-light    : #{color-palette('default', 'light')};
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: $base-margin 0;
+  width: 100%;
+  th,
+  td {
+    padding: $base-padding / 2;
+    text-align: left;
+    vertical-align: baseline;
+    white-space: nowrap;
+  }
+  tr > :last-child {
+    width: 99%;
+  }
+  thead,
+  tbody {
+    tr:last-child > * {
+      border-bottom: 2px solid var(--color);
+    }
+  }
+  thead {
+    td,
+    th {
+      color: var(--color);
+    }
+  }
+  tbody {
+    td,
+    th {
+      border-bottom: 1px solid var(--color-mid-light);
+    }
+    th {
+      font-weight: normal;
+    }
+  }
+  tfoot {
+    color: var(--color);
+  }
+  @each $color in primary, secondary, tertiary {
+    &--#{$color} {
+      --color          : #{color-palette($color)};
+      --color-mid-light: #{color-palette($color, 'mid-light')};
+      --color-light    : #{color-palette($color, 'light')};
+    }
+  }
+  &.table--bordered {
+    $border: 1px solid var(--color-mid-light);
+   
+    border: $border;
+    tr > * {
+      border-left: $border;
+    }
+  }
+  &.table--compact {
+    width: auto;
+    tr > :last-child {
+      width: auto;
+    }
+  }
+  &.table--condensed {
+    td,
+    th {
+      padding: $base-padding / 4;
+    }
+  }
+  &.table--hover {
+    tbody tr:hover {
+      background-color: var(--color-light);
+    }
+  }
+  &.table--striped {
+    tbody tr:nth-of-type(even) {
+      background-color: var(--color-light);
+      border-bottom-color: var(--color-mid-light);
+    }
+  }
+}

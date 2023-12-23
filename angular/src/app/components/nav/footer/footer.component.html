@@ -1,0 +1,48 @@
+<div class="footer">
+    <div class="footerNav">
+        <div class="footerSection">
+            <ul>
+                <li>ACCOUNT</li> 
+                <li *ngIf=!loggedIn><a routerLink="login">Login</a></li> 
+                <li *ngIf=!loggedIn><a routerLink="register">Register</a></li>
+                <li *ngIf=!loggedIn><a routerLink="password-reset-request">Reset Password</a></li>
+                <li *ngIf=loggedIn ><a routerLink="/account/profile">My Account</a></li>
+            </ul>
+        </div>
+
+        <div class="footerSection">
+                <ul>
+                        <li>FISHES</li>
+                        <li *ngIf=loggedIn><a routerLink="auctions">Auctions</a></li>
+                        <li *ngIf=loggedIn><a>Sell</a></li> <!--//logged in-->
+                    </ul>
+        </div>       
+
+        <div class="footerSection">
+                <ul>
+                        <li>COMPANY</li>
+                        <li><a routerLink="/">About us</a></li>
+                        <li><a routerLink="faq">FAQ</a></li>
+                        <li><a *ngIf=!loggedIn routerLink="login">Contact us</a></li>
+                        <li><a *ngIf=loggedIn routerLink="contact-us">Contact us</a></li>
+                    </ul>
+        </div>
+        <div class="footerSection">
+                <ul>    
+                        <li>SOCIAL</li>
+                        <li><a href="https://www.facebook.com/">Facebook</a></li>
+                        <li><a href="https://www.twitter.com/">Twitter</a></li>
+                        <li><a href="https://plus.google.com/" >Google+</a></li>
+                    </ul>
+        </div>
+    </div>
+
+    <div class="footerInfo">
+      <button routerLink="terms-of-service">TERMS OF SERVICE</button>
+      <button routerLink="privacy-policy">PRIVACY POLICY</button>
+      <button routerLink="sitemap">SITEMAP</button>
+    </div>
+    <div class="footerTrade">
+        © 2018 AquaLobby
+    </div>
+</div>

@@ -1,0 +1,131 @@
+# ╔══════════════════════════════════════════════╗
+# ║ Code indentation is important in YAML files! ║
+# ╚══════════════════════════════════════════════╝
+#
+# title       : title in navigation
+# relative_url: permalink of the page
+# children    : subpages
+-
+  title: Discover
+  # permalink: discover/
+  children:
+    -
+      title: Briefing
+      permalink: discover/briefing/
+-
+  title: Define
+  # permalink: define/
+  children:
+    -
+      title: Planning
+      permalink: define/planning/
+    -
+      title: Analyse
+      permalink: define/analyse/
+    -
+      title: Algemeen Concept
+      permalink: define/concept/
+    -
+      title: Requirements
+      permalink: define/requirements/
+      children:
+        -
+          title: API
+          permalink: define/requirements/api/
+        -
+          title: Backoffice
+          permalink: define/requirements/backoffice/
+        -
+          title: Frontoffice
+          permalink: define/requirements/frontoffice/
+    -
+      title: Scenarios
+      permalink: define/scenarios/
+      children:
+        -
+          title: API
+          permalink: define/scenarios/api/
+        -
+          title: Backoffice
+          permalink: define/scenarios/backoffice/
+        -
+          title: Frontoffice
+          permalink: define/scenarios/frontoffice/
+-
+  title: Design
+  # permalink: design/
+  children:
+    -
+      title: Data Modeling
+      permalink: design/data-modeling/
+    -
+      title: IA en IxD
+      # permalink: design/ia-en-ixd/
+      children:
+        -
+          title: Sitemap
+          permalink: design/ia-en-ixd/sitemap/
+        -
+          title: Wireframes
+          permalink: design/ia-en-ixd/wireframes/
+        -
+          title: Wireflow
+          permalink: design/ia-en-ixd/wireflow/
+    -
+      title: Visual Design
+      # permalink: design/visual-design/
+      children:
+        -
+          title: Style Tiles
+          permalink: design/visual-design/style-tiles/
+        -
+          title: Screen Designs
+          # permalink: design/visual-design/screen-designs/
+          children:
+            -
+              title: Backoffice
+              permalink: design/visual-design/screen-designs/backoffice/
+            -
+              title: Frontoffice
+              permalink: design/visual-design/screen-designs/frontoffice/
+        -
+          title: UI Style Guide
+          permalink: design/ui-style-guide/
+-
+  title: Develop
+  # permalink: develop/
+  children:
+    -
+      title: GitHub Repository
+      permalink: develop/repository/
+-
+  title: Deliver
+  # permalink: deliver/
+  children:
+    -
+      title: Handleiding
+      # permalink: deliver/handleiding/
+      children:
+        -
+          title: Backoffice
+          permalink: deliver/handleiding/backoffice/
+        -
+          title: Frontoffice
+          permalink: deliver/handleiding/frontoffice/
+    -
+      title: Timesheet
+      permalink: deliver/timesheet/
+-
+  title: Deploy
+  # permalink: deploy/
+  children:
+    -
+      title: Deployment Guide
+      # permalink: deploy/deployment-guide/
+      children:
+        -
+          title: Backoffice
+          permalink: deploy/deployment-guide/backoffice/
+        -
+          title: Frontoffice
+          permalink: deploy/deployment-guide/frontoffice/

@@ -1,0 +1,61 @@
+@import '../../../../styles.scss';
+
+.containerBtnFaq {
+    margin: 30px auto;
+    text-align: center;
+    display: block;
+    .btnFaq {
+        margin: 0px auto;
+        height: 20px;
+        font-size: 11px;
+        letter-spacing: 1.5px;
+        background: transparent;
+        border: 1px solid rgba(255,255,255,.70);
+        color: map-get($colors, 'snow');
+        &:hover { 
+            color: rgba(255,255,255,.60);
+            transition: 0.3s;
+        }
+    }
+}
+
+.faqAnswer {
+    font-size: 11px;
+    margin-bottom: 10px;
+}
+
+.faqQuestion {
+    background-color: map-get($colors, 'bloodreina');
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    text-align: left;
+    letter-spacing: 0.6px;
+}
+
+h4.faqQuestion.title {
+    color: map-get($colors, 'midnight');
+}
+
+
+@include breakpoint(tablet) {
+    .containerBtnFaq.btnFaq {
+        width: 50%;
+        float: right;
+        display: flex;
+        margin: 10px auto;
+        justify-content: space-between; 
+    }
+    div.dropdown-content-faq {
+        width: 100%;
+    }
+
+    .containerBtnFaq {
+        text-align: left;
+    }
+    .faqAnswer{
+        padding: 13px 0; 
+        font-size: 16px;
+    }
+}

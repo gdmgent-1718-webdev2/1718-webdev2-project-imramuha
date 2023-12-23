@@ -1,0 +1,22 @@
+<div class="accountFormContainer fishes buy">
+
+    <div class="accountFormTitleButton">
+    <h4 class="accountFormTitle">ONGOING AUCTIONS</h4> 
+    </div>
+
+      <div class="accountFishCard"  *ngFor="let _bid of bids">
+        <div class="accountFishCardHeader"><img src="{{_bid.fish.image}}" ></div>
+        <div class="accountFishCardDetail">
+          <ul>
+              <li>{{ _bid.fish.name }}</li>
+              <li>{{ _bid.fish.subcategory.categories.name }} - {{ _bid.fish.subcategory.name }}</li>
+              <li>{{ _bid.fish.birthdate }}</li>
+              <li>{{ _bid.fish.sex }}</li>
+              <li>{{ _bid.fish.size }}cm</li>
+              <li>€ {{ _bid.bid }}</li>
+              <li><countdown (reached)="callback($event)" [text]="text" units="Days | Hours | Minutes | Seconds" showZeros="true"  end="{{ _bid.ended_at }}"></countdown></li>
+              <li><button class="accountFishCardButton gavelButton" routerLink="/auctions/select/{{_bid.id}}" >BID           <i class="fas fa-gavel"></i></button></li>
+          </ul>
+        </div>
+      </div>
+</div>

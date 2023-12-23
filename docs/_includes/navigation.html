@@ -1,0 +1,9 @@
+<nav class="nav">
+    <a class="nav__link nav__link--active" href="{{ site.baseurl }}{% link pages/home.md %}" target="view">
+        <i class="fa fa-fw fa-home"></i> {{ site.title }}
+    </a>
+{%- include navigation-level-0.html nav_items=site.data.navigation %}
+    <a class="nav__link nav__link--never-active" href="{{ site.baseurl }}{% link slides/index.md %}" target="_blank">
+        <i class="fa fa-fw fa-tv"></i> Presentatie
+    </a>
+</nav>

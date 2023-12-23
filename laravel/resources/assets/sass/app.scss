@@ -1,0 +1,78 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.alHeadNavbar {
+  background-color: rgb(21, 21, 23);
+  padding: 0px;
+  min-height: 5vh;
+}
+
+.alContentContainer {
+  background-color: #212529;
+  min-height: 95vh;
+  justify-items: center;
+  overflow: visible;
+
+  .alSideNav {
+    min-height: 95vh;
+
+    ul {
+      background-color: rgb(21, 21, 23);
+      position: sticky;
+      top: 40vh;
+    }
+    li {
+      border-radius: 0px;
+      .active {
+        background-color: white;
+        color: rgb(21, 21, 23);
+        &:hover{
+          background-color: rgb(21, 21, 23);
+          color: rgb(75, 75, 75);
+        }
+      }
+      a {
+        color: white;
+        border: 1px solid white;
+        border-top: 0px;
+        border-radius: 0px;
+        &:hover{
+          background-color: white;
+          color: rgb(75, 75, 75);
+        }
+      }
+
+      &:first-of-type {
+        a {
+          border-top: 1px solid white;
+        }
+      }
+    }
+  }
+}
+
+.maincontainer {
+  min-height: 95vh;
+  .alContent {
+    margin-bottom: 0px;
+    min-height: 84vh;
+  }
+}
+
+.alLogin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(21, 21, 23);
+  button {
+    background-color: rgb(21, 21, 23);
+  }
+}

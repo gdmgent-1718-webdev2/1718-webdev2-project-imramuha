@@ -1,0 +1,20 @@
+
+.wrapper {
+  display: flex;
+  overflow: hidden;
+}
+
+.nav,
+.view {
+  height: 100vh;
+}
+
+.nav {
+  flex: 1 0 250px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.view {
+  flex: 2 1 66%;
+}

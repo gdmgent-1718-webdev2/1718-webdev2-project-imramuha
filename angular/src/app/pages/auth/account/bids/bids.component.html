@@ -1,0 +1,25 @@
+<app-sidenav></app-sidenav>
+<div class="accountFormContainer fishes">
+
+    <div class="accountFormTitleButton">
+    <h4 class="accountFormTitle">MY BIDS</h4><button class="accountFormButton" routerLink="/account/bids/create">ADD A BID<i class="fas fa-plus-square"></i></button>
+    </div>
+
+  
+      <div class="accountFishCard"  *ngFor="let bid of bids">
+        <div class="accountFishCardDetail">
+          <ul>
+              <li>€ {{ bid.bid }}</li>
+              <li>{{ bid.created_at }}</li>
+              <li>{{ bid.started_at }}</li>
+              <li>{{ bid.ended_at }} </li>
+              <li>{{ bid.seller_id }} </li>
+              <li>{{ bid.bidder_id }} </li>
+              <li>{{ bid.status_id }} </li>
+              <li>{{ bid.fish_id }} </li>
+              <li><button class="accountFishCardButton" routerLink="/account/bids/edit/{{bid.id}}" ><i class="fas fa-edit"></i></button>           
+                  <button class="accountFishCardButton" (click)=unpublishBid(bid.id)><i class="fas fa-trash-alt"></i></button></li>
+          </ul>
+        </div>
+      </div>
+</div>

@@ -1,0 +1,87 @@
+<app-sidenav></app-sidenav>
+<div class="accountFormContainer">
+    
+    <div>
+        <h4 class="accountFormHeader">Update a fish</h4>
+    </div>
+
+    <div class="accountFormBody">
+        <form  *ngIf='_user' #editProfileForm="ngForm" (submit)="editProfile()">
+            <div>
+                <div  class="input-field-form-container">                  
+                    <input class="input-field-form" type="text" name="first_name" required maxlength="30" [(ngModel)]="_user.first_name"  #first_name="ngModel">
+                </div>
+                <div class="accountFormError" *ngIf="first_name?.errors&& (first_name.dirty || first_name.touched)">                            
+                    <div [hidden]="!first_name.errors.required"> 
+                        <span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;First Name is required.
+                    </div>
+                </div>
+
+                <div  class="input-field-form-container">                  
+                    <input class="input-field-form" type="text" name="last_name" required maxlength="30" [(ngModel)]="_user.last_name"  #last_name="ngModel">
+                </div>
+                <div class="accountFormError" *ngIf="last_name?.errors&& (last_name.dirty || last_name.touched)">                            
+                    <div [hidden]="!last_name.errors.required"> 
+                        <span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;Last Name is required.
+                    </div>
+                </div>
+
+                <div class="input-field-form-container imgPick">
+                    <image-upload 
+                    [max]="1"
+                    [buttonCaption]="'Upload image'"
+                    [dropBoxMessage]="''"
+                    [extensions]="['jpg','jpeg','gif','png']"
+                    (isPending)="disableSendButton($event)"
+                    (uploadFinished)="imageUploaded($event)"
+                    (removed)="imageRemoved($event)">
+                    </image-upload>
+                    <img class="formImg" src="{{ file_src }}" /> 
+                </div>
+
+                <div  class="input-field-form-container">                  
+                    <input class="input-field-form" type="text" name="street" required maxlength="30" [(ngModel)]="_user.street"  #street="ngModel">
+                </div>
+                <div class="accountFormError" *ngIf="street?.errors&& (street.dirty || street.touched)">                            
+                    <div [hidden]="!street.errors.required"> 
+                        <span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;Street is required.
+                    </div>
+                </div>
+
+                <div  class="input-field-form-container">                  
+                    <input class="input-field-form" type="text" name="nr" required maxlength="30" [(ngModel)]="_user.nr"  #nr="ngModel">
+                </div>
+                <div class="accountFormError" *ngIf="nr?.errors&& (nr.dirty || nr.touched)">                            
+                    <div [hidden]="!nr.errors.required"> 
+                        <span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;House number is required.
+                    </div>
+                </div>
+
+                <div  class="input-field-form-container">                  
+                    <input class="input-field-form" type="text" name="postal_code" required maxlength="30" [(ngModel)]="_user.postal_code"  #postal_code="ngModel">
+                </div>
+                <div class="accountFormError" *ngIf="postal_code?.errors&& (postal_code.dirty || postal_code.touched)">                            
+                    <div [hidden]="!postal_code.errors.required"> 
+                        <span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;Postal code is required.
+                    </div>
+                </div>
+
+                <div  class="input-field-form-container">                  
+                    <input class="input-field-form" type="text" name="province" required maxlength="30" [(ngModel)]="_user.province"  #province="ngModel">
+                </div>
+                <div class="accountFormError" *ngIf="province?.errors&& (province.dirty || province.touched)">                            
+                    <div [hidden]="!province.errors.required"> 
+                        <span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;City is is required.
+                    </div>
+                </div>
+
+
+                <div>
+                    <button class="accountFormBtn" type="button" (click)="goBack()">CANCEL</button>
+                    <button class="accountFormBtn" type="submit" [disabled]="!editProfileForm.form.valid">UPDATE PROFILE</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

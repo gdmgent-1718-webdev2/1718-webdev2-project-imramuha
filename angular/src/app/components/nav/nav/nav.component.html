@@ -1,0 +1,73 @@
+<div class="navigation">
+    <div class="dekstop-nav">
+        <div class="dekstopNavBtn">
+            <ul>
+                <li> <!--  *ngIf=loggedIn if user logged in cclicking -> account -> else to login-->
+                    <button *ngIf=loggedIn routerLink="/account/profile">MY ACCOUNT</button>
+                    <button *ngIf=!loggedIn routerLink="login">LOGIN</button>
+                </li>
+                <li>
+                    <button routerLink="register" *ngIf="!loggedIn">REGISTER</button>
+                </li>
+                <li>
+                    <button *ngIf="loggedIn" (click)="logout($event)">LOG OUT</button>
+                </li>
+            </ul>
+
+        </div>
+        <div class="dekstopNavLink">
+            <ul>
+                <li *ngIf=loggedIn><a  routerLink="contact-us">CONTACT US</a></li>
+                <li *ngIf=!loggedIn><a  routerLink="login">CONTACT US</a></li>
+                <li><span class='bullet'></span><a  routerLink="faq">FAQ</a></li>
+                <li><span class='bullet'></span><a >LANGUAGE</a></li>
+                <li><span class='bullet'></span>
+                    <a class="fa fa-search icon__on" aria-hidden="true"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-site-nav">
+        <div class="nav-container">
+            <div class="nav-items">
+                <div class="brand">
+                    <a href="/" rel="home" class="logo">
+                        <img src="assets/img/nav-logo.svg" alt="logo aqualobby">
+                    </a>
+
+                </div>
+                <div class="dekstopMenu">
+                    <ul>
+                      <li *ngIf=loggedIn ><a routerLink="/account/bids/create">SELL</a></li>
+                      <li *ngIf=loggedIn ><span class='bullet'></span><a routerLink="auctions">BUY</a></li>
+                      <li *ngIf=!loggedIn ><a routerLink="login">SELL</a></li>
+                      <li *ngIf=!loggedIn ><span class='bullet'></span><a routerLink="login">BUY</a></li>
+                      <li><span class='bullet'></span><a href="faq">SERVICES</a></li>
+                      <li><span class='bullet'></span><a routerLink="auctions">DISCOVER</a></li>
+                    </ul>
+                </div>
+                <div class="mobile-menu">
+                    <a href="searchform" class="mobile-menu-icon">
+                        <span class="fa fa-search icon__on" aria-hidden="true"></span>
+                        <!-- <span class="fa fa-times icon__off" aria-hidden="true"></span> -->
+                    </a>
+
+                    <a href="myaccount-bar" class="mobile-menu-icon">
+                        <span class="fa fa-user icon__on" aria-hidden="true"></span>
+                        <!-- <span class="fa fa-times icon__off" aria-hidden="true"></span> -->
+                    </a>
+
+                    <div class="mobile-menu-button">
+                        <button class="nav-button" type="button" data-toggle="main-nav-container">
+                            <!--  <span class="title-bar-title show-for-sr">Menu</span> -->
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<app-sidenav></app-sidenav>
+<div class="containerAccount">
+    <div class="containerAccountInfo profileContainer">
+            
+    <div class="accountFormTitleButton">
+            <h4 class="accountFormTitle centeredTitle">AUCTION DETAIL</h4> 
+            </div>
+            <hr style="border-color:grey;"/>
+        
+            <div class="auctionContainer">
+                <div class="auctionFishContainer">
+                
+                    <div class="accountFormTitleButton">
+                        <h4 class="accountFormTitle centeredTitle">NOTIFICATIONS</h4>
+                    </div>
+                    <div class="auctionFishDetail">
+                       
+                    </div>
+                    <div class="auctionsButtons">
+                    <button class="accountFormBtn" type="button">MORE</button>
+                    </div>
+             
+                </div>
+        
+                <div class="auctionSellerContainer">
+                    <div class="accountFormTitleButton">
+                        <h4 class="accountFormTitle centeredTitle">PROFILE</h4>
+                    </div>
+                    <div class="profileImage">
+                            <img src="{{_user.image}}" >
+                        </div>
+                    <div  class="auctionSellerDetail">
+                    <ul>
+                        <li><label>Email: </label> {{_user.user.email}}</li>
+                        <li><label>Username: </label> {{_user.user.username}}</li>
+                        <li><label>Firstname: </label> {{_user.first_name}}</li>
+                        <li><label>Lastname: </label> {{_user.last_name}}</li>
+                        <li><label>Street: </label> {{_user.street}}</li>
+                        <li><label>Number: </label> {{_user.nr}}</li>
+                        <li><label>Postal Code: </label> {{_user.postal_code}}</li>
+                        <li><label>City: </label> {{_user.province}}</li>
+                    </ul>
+                    </div>
+                    <button class="accountFormBtn profileButton" routerLink="/account/profile/select" >EDIT PROFILE  </button>
+                </div>
+            <div>
+    </div>
+</div>

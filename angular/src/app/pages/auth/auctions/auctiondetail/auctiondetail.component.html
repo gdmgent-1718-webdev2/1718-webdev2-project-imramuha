@@ -1,0 +1,67 @@
+<div class="accountFormContainer fishes buy">
+
+    <div class="accountFormTitleButton">
+    <h4 class="accountFormTitle">AUCTION DETAIL</h4> 
+    </div>
+    <hr style="border-color:grey;"/>
+
+    <div class="auctionContainer">
+        <div class="auctionFishContainer auctionss">
+        <form #raiseBidForm="ngForm" (submit)="raiseBid()">
+            <div class="accountFormTitleButton">
+                <h4 class="accountFormTitle">FISH</h4>
+            </div>
+            <div class="auctionFishImage">
+                <img src="{{_bid.fish.image}}" >
+            </div>                                                     
+            <div class="auctionFishDetail">
+                <ul>
+                    <li><label>Name: </label>   {{_bid.fish.name}}</li>
+                    <li><label>Category: </label>   {{ _bid.fish.subcategory.categories.name }}</li>
+                    <li><label>Subcategory: </label>   {{ _bid.fish.subcategory.name }}</li>
+                    <li><label>Birthdate: </label>   {{ _bid.fish.birthdate }}</li>
+                    <li><label>Gender: </label>   {{ _bid.fish.sex }}</li>
+                    <li><label>Size: </label>   {{ _bid.fish.size }} cm</li>
+                    <li><label>Highest Bid: </label>   € {{currentBid}}</li>
+                    <li><countdown (reached)="callback($event)" [text]="text" units="Days | Hours | Minutes | Seconds" showZeros="true"  end="{{ _bid.ended_at }}"></countdown></li>
+                        <li><div>
+                            <input class="input-field-form auctionInput" type="number" required [min]="currentBid + 1"  placeholder="Your new bid" name="bid" [(ngModel)]="_bid.bid" #bid="ngModel" >
+                        </div>
+                        <div class="accountFormError" *ngIf="bid?.errors && (bid.dirty || bid.touched)">                            
+                            <div [hidden]="!bid.errors.required"> 
+                                <span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;You have to put an offer in.
+                            </div>
+                            <div [hidden]="!bid.errors?.min"> 
+                                <span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;The offer can not be lower than previous.
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="auctionsButtons">
+            <button class="accountFormBtn" type="button" (click)="goBack()">CANCEL</button>
+            <button  type="submit" [disabled]="!raiseBidForm.form.valid"  class="accountFormBtn">RAISE BID</button>
+            </div>
+        </form>
+        </div>
+
+        <div class="auctionSellerContainer">
+            <div class="accountFormTitleButton">
+                <h4 class="accountFormTitle">SELLER</h4>
+            </div>
+            <div class="auctionSellerImage">
+                <img src="{{_bid.fish.user.customer.image}}" >
+            </div>
+            <div  class="auctionSellerDetail">
+            <ul>
+                <li><label>Username: </label> {{_bid.fish.user.username}}</li>
+                <li><label>Email: </label> {{_bid.fish.user.email}}</li>
+                <li><label>City: </label> {{_bid.fish.user.customer.province}}</li>
+            </ul>
+            </div>
+            <button  class="accountFormBtn msg" routerLink="/account/messages/send/{id}" >SEND MESSAGE  </button>
+        </div>
+    <div>
+
+
+</div>

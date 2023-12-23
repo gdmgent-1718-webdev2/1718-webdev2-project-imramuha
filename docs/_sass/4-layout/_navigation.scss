@@ -1,0 +1,118 @@
+$nav-link-indent-base: 2rem;
+$nav-link-indent-level: .75rem;
+$nav-link-indent-offset: .25rem;
+$text-default: #{map-get($swatches, 'primary')};
+$text-invert: #{map-get($swatches, 'light')};
+
+.nav {
+  background-color: #{map-get($swatches, 'dark')};
+  counter-reset: nav-level-0;
+  flex-wrap: nowrap;
+  font-family: #{map-get($fonts, 'primary')};
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  > .nav__link {
+    &:first-of-type {
+      background-color: #{map-get($swatches, 'primary')};
+      &:active,
+      &:link,
+      &:hover,
+      &:visited {
+        color: $text-invert;
+      }
+    }
+    position: relative;
+    padding: 1em 0 1em $nav-link-indent-base;
+    &:hover {
+      background-color: #{map-get($swatches, 'secondary')};
+    }
+    > i {
+      left: $nav-link-indent-offset;
+      position: absolute;
+    }
+  }
+}
+
+.nav__link {
+  display: block;
+  padding: .5em 0 .5em $nav-link-indent-base;
+  position: relative;
+  text-decoration: none;
+  &:active,
+  &:link,
+  &:hover,
+  &:visited {
+    color: $text-default;
+  }
+  &:hover {
+    background-color:  #{map-get($swatches, 'secondary')};
+    color: $text-invert;
+  }
+  &::before {
+    left: $nav-link-indent-offset;
+    opacity: .5;
+    padding-left: .25em;
+    position: absolute;
+  }
+  &.nav__link--active {
+    background-color:  #{map-get($swatches, 'primary-light')};
+    color: $text-invert;
+  }
+  &.nav__link--disabled {
+    background-color: transparent;
+    color: $text-default;
+    &:hover {
+      cursor: default;
+    }
+  }
+}
+
+.nav__level {
+  &--0 {
+    > li > .nav__link {
+      font-weight: bold;
+      padding: 1em 0 1em $nav-link-indent-base;
+      text-transform: uppercase;
+      &::before {
+        content: counter(nav-level-0, upper-roman);
+        counter-increment: nav-level-0;
+      }
+    }
+  }
+  &--1 {
+    counter-reset: nav-level-1;
+    > li > .nav__link {
+      font-weight: 700;
+      padding-left: $nav-link-indent-base + 1 * $nav-link-indent-level;
+      &::before {
+        content: counter(nav-level-1);
+        counter-increment: nav-level-1;
+      }
+    }
+  }
+  &--2 {
+    counter-reset: nav-level-2;
+    > li > .nav__link {
+      font-weight: 500;
+      padding-left: $nav-link-indent-base + 2 * $nav-link-indent-level;
+      &::before {
+        content: counter(nav-level-1) "." counter(nav-level-2);
+        counter-increment: nav-level-2;
+      }
+    }
+  }
+  &--3 {
+    counter-reset: nav-level-3;
+    > li > .nav__link {
+      font-weight: 400;
+      padding-left: $nav-link-indent-base + 3 * $nav-link-indent-level;
+      &::before {
+        content: counter(nav-level-1) "." counter(nav-level-2) "." counter(nav-level-3);
+        counter-increment: nav-level-3;
+      }
+    }
+  }
+}

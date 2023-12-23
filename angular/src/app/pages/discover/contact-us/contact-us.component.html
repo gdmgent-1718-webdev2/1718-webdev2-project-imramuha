@@ -1,0 +1,56 @@
+<div class="containerInfo containerContact">
+    <div class="containerContactForm">
+      <h4 class="containerInfoTitle">Contact Us</h4>
+      <p class="containerInfoCaption">We are here to answer any questions you may have about our services. Reach out to us and we will respond as soon as we can.</p>
+      <p>Even if there is something you always wanted to experience and can not find on AquaLobby or have experienced any kind of issues with our services, let us know and we promise we will do our best to find a solution for you.</p>
+      
+      <form #contactForm="ngForm" (ngSubmit)="onSubmit()">
+          <div class="input-field-form-container">
+             <!-- [(ngModel)]="form.title" -->
+          <input class="input-field-form" type="email" placeholder="Title" name="title" required>
+            <i class="fas fa-signature formIcon"></i>
+          </div> 
+  
+  
+          <div class="input-field-form-container">
+               <!--[(ngModel)]="form.type"-->
+            <select  class="input-field-form" name="type">
+                <option value="0" disabled selected>Type of message...</option>
+                <option value="question">Question</option>
+                <option value="complain">Complain</option>
+                <option value="other">Other</option>
+              </select>
+          </div>
+  
+          <div class="input-field-form-container">
+            <!--[(ngModel)]="form.message"-->
+            <textarea placeholder="Message"  class="input-field-form" name="message"></textarea>
+          </div>
+  
+  
+          <!--<div class="formAlert" [hidden]="!error">{{ error }}</div>-->
+  
+          <button class="formBtn" type="submit" [disabled]="!contactForm.valid" >SEND</button>  
+      </form>
+    </div>
+
+    <hr>
+    
+    <div class="containerContactInfo">
+      <h4 class="containerInfoTitle">Contact Info</h4> 
+     
+      <h4>Company</h4>
+      <p>AquaLobby</p>  
+
+      <h4>Email</h4>
+      <p>service&#64;aqualobby.com</p>
+     
+      <h4>Telephone</h4>
+      <p>02 123 45 45 67</p>
+     
+      <h4>Address</h4>
+      <p>Koipond 1<br/>
+      9000 Ghent<br/>
+      Belgium</p>
+</div>
+  

@@ -1,0 +1,147 @@
+@import '../../../../styles.scss';
+
+.homeContainer {
+    margin: 19px 5%;
+    img {
+        width: 100%;
+        height: auto;
+        max-height: 400px;
+        filter:blur(6px);
+        filter:grayscale(76%);
+        //border: 5px solid map-get($colors, 'slate');
+    }
+    .homeItem {
+        margin: 30px 0; 
+        background-color: map-get($colors, 'slate');
+        .whyUsBox {
+            margin-top: 50px;
+        }
+    }
+    .homeItem.first {
+        margin: 50px 0px; 
+        padding: 20px 20px 16px;
+        color: map-get($colors, 'silvermoon');
+        text-align: center;
+        p {
+            color: white;
+            letter-spacing: 1px;
+            font-variant: small-caps;
+            margin: 2px 0;
+        }
+    }
+    .homeItem.whyUs {
+        color: white;
+        text-align: center;
+        padding-bottom: 5px;
+        h2 {
+            color: map-get($colors, 'bloodreina');
+            font-size: 18px;
+            margin: 50px 0 5px;
+            letter-spacing: 0.6px;
+        }
+        p {
+            color: map-get($colors, 'snowwhite');
+        }
+       .whyUsIcon {
+           background-color: map-get($colors, 'bloodreina');
+           padding: 40px 52px;
+           border-radius: 50%;
+           font-size: 50px;
+       }
+
+    }
+    .homeItem.whyUs div {
+        margin: 80px 10px 20px;
+    }
+}
+
+.homeContainer.homeItem.whyUs {
+    p {
+    color: white;
+    }
+}
+
+.centeredTitles {
+    text-align: center;
+}
+
+.homeImageContainer {
+    position: relative;
+    color: white;
+    .homeImageText {
+        width: 300px;
+        height: 180px;
+        padding: 15px 30px;
+        background-color: rgba(23, 23, 23, 0.583);
+        color: white;
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+    }
+    h2 {
+        color: map-get($colors, 'snowhite');
+        font-size: 22px;
+    }
+    h3 {
+        color: map-get($colors, 'snowhite');
+        font-size: 18px;
+        margin-bottom: 0px;
+    }
+    p {
+        color: map-get($colors, 'snowhite');
+        font-size: 16px;
+        margin-top: 5px;
+    }
+}
+
+.faqQuestion {
+    font-size: 12px;
+    margin: 10px auto 5px;
+    background-color: map-get($colors, 'bloodreina');
+    text-align: center;
+    padding: 10px;
+    border: none;
+    width: 80%;
+    letter-spacing: 0.6px;
+}
+
+h4.faqQuestion.title {
+    color: map-get($colors, 'midnight');
+}
+
+.loginBtnn {
+    width: 89%;
+    margin: 30px 5%;
+}
+
+@include breakpoint(tablet) {
+    .faqQuestion {
+        font-size: 19px;
+    }
+    .homeItem.first {
+       overflow: auto;
+       font-size: 19px;
+    }
+    .homeItemSeller, .homeItemBuyer {
+        width: 50%;
+        margin-top: -33px;
+    }
+    .homeItemSeller {
+        float: left;
+    }
+    .homeItemBuyer {
+        
+    }
+}
+
+@include breakpoint(tabletwide) {
+    .homeItem.whyUs {
+        overflow: auto;
+    }
+    .homeItem.whyUs div{
+        margin: 10px 10px 10px !important; 
+        float: left;
+        width: 23%;
+    }
+}
+

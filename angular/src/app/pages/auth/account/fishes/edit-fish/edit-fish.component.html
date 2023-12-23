@@ -1,0 +1,207 @@
+<app-sidenav></app-sidenav>
+<div class="accountFormContainer">
+
+    <div>
+        <h4 class="accountFormHeader">Update a fish</h4>
+    </div>
+
+    <div class="accountFormBody">
+        <form *ngIf='fish' #editFishForm="ngForm" (submit)="updateFish()">
+            <div>
+                <div class="input-field-form-container">
+                    <input
+                        class="input-field-form"
+                        type="text"
+                        name="name"
+                        required
+                        maxlength="30"
+                        [(ngModel)]="fish.name"
+                        (ngModelChange)="fish.name=$event"
+                        #name="ngModel"></div>
+                    <div
+                        class="accountFormError"
+                        *ngIf="name?.errors&& (name.dirty || name.touched)">
+                        <div [hidden]="!name.errors.required">
+                            <span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;Name is required.
+                        </div>
+                    </div>
+
+                    <div class="input-field-form-container">
+                        <mat-form-field>
+                            <mat-label>Choose a date</mat-label>
+                            <input
+                                [(ngModel)]="fish.birthdate"
+                                required
+                                matInput
+                                [matDatepicker]="picker"
+                                [min]="minDate"
+                                [max]="maxDate">
+                                <mat-hint>DD-MM-YYYY</mat-hint>
+                                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+
+                        <div
+                            class="accountFormError"
+                            *ngIf="birthdate?.errors&& (birthdate.dirty || birthdate.touched)">
+                            <div [hidden]="!birthdate.errors.required">
+                                <span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;Date can not be after today, before 1900s and is required.
+                            </div>
+                        </div>
+
+                        <div class="accountFormError" class="input-field-form-container">
+                            <select
+                                class="input-field-form"
+                                [(ngModel)]="fish.sex"
+                                #sex="ngModel"
+                                name="sex"
+                                required>
+                                <option value="undefined" disabled selected>Choose...</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Unknown">Unknown</option>
+                            </select>
+                            <div class="accountFormError" *ngIf="sex?.errors && (sex.dirty || sex.touched)">
+                                <div [hidden]="!sex.errors.required">
+                                    <span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;You must select a sex for your fish.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-field-form-container">
+
+                            <textarea
+                                required
+                                class="input-field-form"
+                                name="detail"
+                                [(ngModel)]="fish.detail"
+                                #detail="ngModel"></textarea>
+                        </div>
+                        <div
+                            class="accountFormError"
+                            *ngIf="detail?.errors&& (detail.dirty || detail.touched)">
+                            <div [hidden]="!detail.errors.required">
+                                <span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;Tell us something that might increase its price.
+                            </div>
+                        </div>
+
+                        <!--<div class="input-field-form-container imgPick">
+                            <image-upload
+                                [max]="1"
+                                [buttonCaption]="'Upload image'"
+                                [dropBoxMessage]="''"
+
+                                (isPending)="disableSendButton($event)"
+                                (uploadFinished)="imageUploaded($event)"
+                                (removed)="imageRemoved($event)"></image-upload>
+                            <img class="formImg" src="{{ file_src }}"/>
+
+                        </div>-->
+                        <!-- Other form inputs (replace with your actual form fields) -->
+                        <!-- Image upload input -->
+                        <div class="input-field-form-container imgPick">
+                            
+                            <label for="image">Choose an image</label>
+                            <input type="file" (change)="imageUpload($event)" accept="image/*" id="image">
+                          </div>
+                          
+                          <!-- Image preview -->
+                          <div class="input-field-form-container imgPick">
+                            <img class="formImg" src="{{ file_src }}" *ngIf="file_src"/>
+                          </div>
+                          
+                          <!-- Button to trigger the image removal -->
+                          <button type="button" class="start-upload-btn" (click)="imageRemove()">Remove Image</button>
+                                            
+                        </div>
+
+
+
+
+
+
+                        <div class="input-field-form-container">
+                            <select
+                                class="input-field-form"
+                                name="size"
+                                [(ngModel)]="fish.size"
+                                #size="ngModel"
+                                required>
+                                <option value="" disabled selected>Length in cm</option>
+                                <option value="0-10">0-10</option>
+                                <option value="11-25">11-25</option>
+                                <option value="26-35">26-35</option>
+                                <option value="36-50">36-50</option>
+                                <option value="51-75">51-75</option>
+                                <option value="56-100">56-100</option>
+                                <option value="100+">100+</option>
+                            </select>
+                            <div
+                                class="accountFormError"
+                                *ngIf="size?.errors && (size.dirty || size.touched)">
+                                <div [hidden]="!size.errors.required">
+                                    <span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;Size is required.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-field-form-container">
+
+                            <select
+                                class="input-field-form"
+                                name="category_id"
+                                [(ngModel)]="fish.category_id"
+                                #category_id="ngModel"
+                                required>
+                                <option
+                                    [value]='undefined'
+                                    disabled
+                                    selected
+                                    placeholder="Choose a category..."
+                                    selected
+                                    disabled>Choose a category...</option>
+                                <option *ngFor="let category of _categories" value="{{category.id}}">{{ category.name }}
+                                </option>
+                            </select>
+                            <div
+                                class="accountFormError"
+                                *ngIf="category_id?.errors && (category_id.dirty || category_id.touched)">
+                                <div [hidden]="!category_id.errors.required">
+                                    <span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;Please choose a category.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-field-form-container">
+                            <select
+                                required
+                                required
+                                class="input-field-form"
+                                name="subcategory_id"
+                                [(ngModel)]="fish.subcategory_id"
+                                #subcategory_id="ngModel">
+                                <option [value]='undefined' disabled selected>Choose a subcategory...</option>
+                                <option *ngFor="let subcategory of _subcategories" value="{{subcategory.id}}">{{
+                            subcategory.name }}</option>
+                            </select>
+                            <div
+                                class="accountFormError"
+                                *ngIf="subcategory_id?.errors && (subcategory_id.dirty || subcategory_id.touched)">
+                                <div [hidden]="!subcategory_id.errors.required">
+                                    <span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;Please choose a subcategory.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <button class="accountFormBtn" type="button" (click)="goBack()">CANCEL</button>
+                            <button
+                                class="accountFormBtn"
+                                type="submit"
+                                [disabled]="!editFishForm.form.valid">ADD</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>

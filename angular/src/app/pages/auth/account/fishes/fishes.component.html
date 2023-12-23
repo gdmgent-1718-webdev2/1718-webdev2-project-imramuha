@@ -1,0 +1,23 @@
+<app-sidenav></app-sidenav>
+<div class="accountFormContainer fishes">
+
+    <div class="accountFormTitleButton">
+    <h4 class="accountFormTitle">MY FISHES</h4><button class="accountFormButton" routerLink="/account/fishes/create">ADD A FISH  <i class="fas fa-plus-square"></i></button>
+    </div>
+
+      <div class="accountFishCard"  *ngFor="let fish of fishes">
+        <div class="accountFishCardHeader"><img src="{{fish.image}}" ></div>
+        <div class="accountFishCardDetail">
+          <ul>
+              <li>{{ fish.name }}</li>
+              <li>{{ fish.birthdate }}</li>
+              <li>{{ fish.sex }}</li>
+              <!--<li>{{ fish.detail }}</li>-->
+              <li>{{ fish.size }} cm</li>
+              <li>{{ fish.subcategory.categories.name }} - {{ fish.subcategory.name }}</li>
+              <li><button class="accountFishCardButton" routerLink="/account/fishes/edit/{{fish.id}}" ><i class="fas fa-edit"></i></button>
+                  <button class="accountFishCardButton" (click)=deleteFish(fish.id)><i class="fas fa-trash-alt"></i></button></li>
+          </ul>
+        </div>
+      </div>
+</div>

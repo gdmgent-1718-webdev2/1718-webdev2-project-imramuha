@@ -1,0 +1,16 @@
+{%- if include.nav_items %}
+    <ul class="nav__level--0">
+        {%- for nav_item in include.nav_items %}
+        <li>
+            {%- if nav_item.permalink %}
+            <a class="nav__link" href="{{ nav_item.permalink | relative_url }}" target="view">{{ nav_item.title }}</a>
+            {%- else %}
+            <a class="nav__link nav__link--disabled" href="#">{{ nav_item.title }}</a>
+            {%- endif %}
+            {%- if nav_item.children %}
+                {%- include navigation-level-1.html nav_items=nav_item.children %}
+            {%- endif %}
+        </li>
+        {%- endfor %}
+    </ul>
+{%- endif %}

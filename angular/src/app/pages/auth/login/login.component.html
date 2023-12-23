@@ -1,0 +1,29 @@
+<div class="containerLogin">
+
+      <div>
+
+        <form #loginForm="ngForm" (ngSubmit)="onSubmit()" action="" method="get">
+            <h2 class="formTitle">LOGIN</h2><i class="fas fa-sign-in-alt formIcon floatRight backgroundRed formKey"></i>
+            <div class="input-field-form-container">
+            <input class="input-field-form" type="email" placeholder="Email" name="email" [(ngModel)]="form.email" required>
+            <i class="fas fa-envelope formIcon"></i>
+            </div> 
+
+            <div class="input-field-form-container">
+            <input class="input-field-form" type="password" placeholder="Password" name="password" [(ngModel)]="form.password" required> 
+            <i class="fas fa-key formIcon"></i>
+            </div>
+
+            <div class="formAlert" [hidden]="!error">{{ error }}</div>
+
+            <button class="formBtn" type="submit" [disabled]="!loginForm.valid" >LOGIN</button>  
+
+    
+
+            <div class="formBottomText floatLeft"><a routerLink="/password-reset-request">Forgot password?</a></div>    
+    
+            <div class="formBottomText floatRight"><a routerLink="/register">Create an account</a></div>
+        </form>
+
+      </div> <!-- end login -->
+</div>

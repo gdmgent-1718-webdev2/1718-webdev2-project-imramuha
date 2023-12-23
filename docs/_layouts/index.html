@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}{% link assets/css/app.scss %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+</head>
+<body class="wrapper">
+{% include navigation.html %}
+<iframe class="view" name="view" src="{{ site.baseurl }}{% link pages/home.md %}" frameborder="0">
+{{ content }}
+</iframe>
+{% include scripts-bottom.html %}
+</body>
+</html>

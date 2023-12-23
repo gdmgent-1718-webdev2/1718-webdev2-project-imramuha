@@ -1,0 +1,24 @@
+{%- assign revealjs_version = '3.6.0' %}
+<!DOCTYPE html>
+<html lang="nl">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>{{ page.title }} | {{ site.title }}</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/{{ revealjs_version }}/css/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/{{ revealjs_version }}/css/theme/{{ page.theme[0] }}.min.css">
+<div class="reveal">
+    <div class="slides">
+        {{- content }}
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/{{ revealjs_version }}/lib/js/head.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/{{ revealjs_version }}/js/reveal.min.js"></script>
+<script>
+    Reveal.initialize({
+        dependencies: [
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/{{ revealjs_version }}/plugin/markdown/marked.js' },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/{{ revealjs_version }}/plugin/markdown/markdown.min.js' },
+        ]
+    });
+</script>
+</html>

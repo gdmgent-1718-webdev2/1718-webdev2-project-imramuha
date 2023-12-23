@@ -1,0 +1,22 @@
+.containerAccount {
+    background-color: map-get($colors, 'slate');
+    margin: 35px;
+    padding: 10px;
+    overflow: hidden;
+    display: flex;
+    background-color:  map-get($colors, 'slate');
+    color: map-get($colors, 'snow');
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    p, li {
+        font-size: 11px;
+    }
+}
+
+.containerAccountInfo {
+    float: right;
+}
+
+.measurements p {
+    margin: 5px;
+    display: block;
+}
