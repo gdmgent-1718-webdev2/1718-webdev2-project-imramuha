@@ -32,14 +32,16 @@ export class AccountService {
   }
 
   editProfile(info): Observable<any> {
-    return this.httpClient.post(`${this.baseUrl}/account/profile/edit`, info, this.getRequestOptions());
+    const data = JSON.stringify(info);
+    return this.httpClient.post(`${this.baseUrl}/account/profile/edit`, data, this.getRequestOptions());
   }
 
   /*
   * FISHES
   */
   addFish(info): Observable<any> {
-    return this.httpClient.post(`${this.baseUrl}/account/fishes/create`, info, this.getRequestOptions());
+    const data = JSON.stringify(info);
+    return this.httpClient.post(`${this.baseUrl}/account/fishes/create`, data, this.getRequestOptions());
   }
 
   showAllFishes(): Observable<any> {
@@ -51,7 +53,6 @@ export class AccountService {
   }
 
   editFish(info): Observable<any> {
-    console.log(info.image + "this in inside account service");
     const data = JSON.stringify(info);
     console.log(data)
     return this.httpClient.post(`${this.baseUrl}/account/fishes/edit`, data, this.getRequestOptions());

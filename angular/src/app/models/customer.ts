@@ -5,5 +5,5 @@ export class Customer {
     nr: string;
     postal_code: string;
     province: string;
-    image: string;
+    image: Blob | string;
 }

@@ -99,10 +99,7 @@ export class EditFishComponent implements OnInit {
     }
 
     updateFish() {
-
         this.fish.birthdate = moment(this.fish.birthdate).format('YYYY-MM-DD');
-        console.log("before its posted:")
-        console.log(this.fish);
         console.log(this.fish.image)
 
         // Now you can send the updated fish data through the API
@@ -110,8 +107,6 @@ export class EditFishComponent implements OnInit {
             .accountService
             .editFish(this.fish)
             .subscribe(response => {
-                console.log("inside updatefish");
-                console.log(response);
                 this
                     .router
                     .navigate(['/account/fishes']);

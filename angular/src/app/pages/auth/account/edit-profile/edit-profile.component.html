@@ -6,7 +6,7 @@
     </div>
 
     <div class="accountFormBody">
-        <form  *ngIf='_user' #editProfileForm="ngForm" (submit)="editProfile()">
+        <form  *ngIf='_user' #editProfileForm="ngForm" (submit)="updateProfile()">
             <div>
                 <div  class="input-field-form-container">                  
                     <input class="input-field-form" type="text" name="first_name" required maxlength="30" [(ngModel)]="_user.first_name"  #first_name="ngModel">
@@ -27,17 +27,20 @@
                 </div>
 
                 <div class="input-field-form-container imgPick">
-                    <image-upload 
-                    [max]="1"
-                    [buttonCaption]="'Upload image'"
-                    [dropBoxMessage]="''"
-                    [extensions]="['jpg','jpeg','gif','png']"
-                    (isPending)="disableSendButton($event)"
-                    (uploadFinished)="imageUploaded($event)"
-                    (removed)="imageRemoved($event)">
-                    </image-upload>
-                    <img class="formImg" src="{{ file_src }}" /> 
+                            
+                    <label for="image">Choose an image</label>
+                    <input type="file" (change)="imageUpload($event)" accept="image/*" id="image">
+                  
+                  <!-- Image preview -->
+                  <div class="input-field-form-container imgPick">
+                    <img class="formImg" src="{{ file_src }}" *ngIf="file_src"/>
+                  </div>
+                  
+                  <!-- Button to trigger the image removal -->
+                  <button type="button" class="start-upload-btn" (click)="imageRemove()">Remove Image</button>
+                                    
                 </div>
+
 
                 <div  class="input-field-form-container">                  
                     <input class="input-field-form" type="text" name="street" required maxlength="30" [(ngModel)]="_user.street"  #street="ngModel">

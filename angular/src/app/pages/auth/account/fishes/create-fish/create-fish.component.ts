@@ -1,96 +1,111 @@
-import { Component, OnInit } from '@angular/core';
-import { SnotifyService } from 'ng-snotify';
-import { AuthService } from '../../../../../services/auth.service';
-import { TokenService } from '../../../../../services/token.service';
-import { AuthStatusService } from '../../../../../services/auth-status.service';
-import {FormControl} from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {SnotifyService} from 'ng-snotify';
+import {AuthService} from '../../../../../services/auth.service';
+import {TokenService} from '../../../../../services/token.service';
+import {AuthStatusService} from '../../../../../services/auth-status.service';
+import * as moment from 'moment';
 
+import {Router} from '@angular/router'; //s
+import {Fish} from '../../../../../models/fish';
 
-import {ActivatedRoute, Params, Router} from '@angular/router'; //s
-import { Fish } from '../../../../../models/fish';
+import {AccountService} from '../../../../../services/account.service';
 
-import { AccountService } from '../../../../../services/account.service';
-import { MomentDateAdapter } from '@angular/material-moment-adapter';
+declare let $ : any;
 
-declare let $: any; 
-
-@Component({
-  selector: 'app-create-fish',
-  templateUrl: './create-fish.component.html',
-  styleUrls: ['./create-fish.component.scss']
-})
+@Component({selector: 'app-create-fish', templateUrl: './create-fish.component.html', styleUrls: ['./create-fish.component.scss']})
 export class CreateFishComponent implements OnInit {
 
-  minDate = new Date(1900, 0, 1);
-  maxDate = new Date();
-  model = new Fish();
+    minDate = new Date(2023, 2, 1);
+    maxDate = this.getTomorrow(); // Use the getTomorrow function
+    model = new Fish();
 
-  public file_src:string = "../assets/img/default_avatar.png";
-  public error = null;
-  private _categories: any;
-  private _subcategories: any;
-  private dateFormat: any;
+    public file_src : string = "../assets/img/default_avatar.png";
+    public error = null;
+    private _categories : any;
+    private _subcategories : any;
+    private dateFormat : any;
 
-  constructor( 
-    private router: Router,
-    private accountService: AccountService,
-    private notify: SnotifyService,
-    private Notfiy:SnotifyService,
-    private Token : TokenService,
-    private AuthStatus : AuthStatusService,
-    private Auth: AuthService,
-  ) { }
+    constructor(private router : Router, private accountService : AccountService, private notify : SnotifyService, private Notfiy : SnotifyService, private Token : TokenService, private AuthStatus : AuthStatusService, private Auth : AuthService,) {}
 
-  ngOnInit() {
-   
-    this.getAllCategories();
-    this.getAllSubcategories();
-  }
+    ngOnInit() {
+        this.getAllCategories();
+        this.getAllSubcategories();
+    }
 
-  addFish(){
-    //return console.log(this.model);
-    this.accountService
-      .addFish(this.model)
-      .subscribe(response => {     
-      this.router.navigateByUrl('/account/fishes');
-      this.Notfiy.success(response.response,{timeout:2500});      
-    })
-  }
+    getTomorrow() : Date {
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        return tomorrow;
+    }
 
-  getAllCategories(){
-    this.accountService
-    .showAllFishes()
-    .subscribe(categories => {
-      this._categories = categories[1];
-      //console.log(categories);
-    })
-  }
+    getAllCategories() {
+        this
+            .accountService
+            .showAllFishes()
+            .subscribe(categories => {
+                this._categories = categories[1];
+            })
+    }
 
-  getAllSubcategories(){
-    this.accountService
-    .showAllFishes()
-    .subscribe(subcategories => {
-      this._subcategories = subcategories[2];
-      //console.log(subcategories);
+    getAllSubcategories() {
+        this
+            .accountService
+            .showAllFishes()
+            .subscribe(subcategories => {
+                this._subcategories = subcategories[2];
+            })
+    }
 
-    })
-  }
+    goBack() {
+        this
+            .router
+            .navigate(['/account/fishes']);
+        this
+            .notify
+            .info('There was no fish added.');
+    }
+    imageUpload(event : any) {
+        const file = event.target.files[0];
 
-  // hide dafault img if one is uploaded
-  imageUploaded(file: any){
-    $('img').hide();
-    // changes value of default img
-    this.model.image = file.src;
-  }
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = () => {
+                this.file_src = reader.result as string;
+                this.convertFileToBase64(file);
+            };
+            reader.readAsDataURL(file);
+        }
+    }
 
-  // redone above
-  imageRemoved(file: any) {
-    $('img').show();
-  }
-    
-  goBack(){
-    this.router.navigate(['/account/fishes']);
-    this.notify.info('There was no fish added.');
-  }
+    convertFileToBase64(file : File) {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+            // Set the image property to the base64-encoded string
+            this.model.image = reader.result as string;
+        };
+        reader.readAsDataURL(file);
+    }
+
+    imageRemove() {
+        this.model.image = null; // Remove the image by setting the property to null
+        this.file_src = "../assets/img/default_avatar.png";
+    }
+
+    addFish() {
+        // Assuming this.model is an instance of the Fish model
+        this.model.birthdate = moment(this.model.birthdate).format('YYYY-MM-DD');
+
+        this
+            .accountService
+            .addFish(this.model)
+            .subscribe(response => {
+                this
+                    .router
+                    .navigateByUrl('/account/fishes');
+                this
+                    .Notfiy
+                    .success(response.response, {timeout: 2500});
+            });
+    }
 
 }

@@ -2,7 +2,7 @@ export class Bid {
     bid: number;
     id: number;
     fish_id: number;
-      bidders_id: null;
+    bidders_id: null;
     ended_at: string;
     highest_bidder: string;
     started_at: string;
