@@ -88,6 +88,10 @@ export class AccountService {
   /*
   * OFFERS
   */
+  showMyOffers(): Observable<any> {
+    return this.httpClient.get(`${this.baseUrl}/account/offers`, this.getRequestOptions());
+  }
+
 
   /* 
   * AUCTIONS
@@ -103,4 +107,15 @@ export class AccountService {
   raiseBid(info): Observable<any> {
     return this.httpClient.post(`${this.baseUrl}/auctions/raise-bid`, info, this.getRequestOptions());
   }
+
+  /*
+  * Messages
+  */
+  showMyMessages(): Observable<any> {
+    return this.httpClient.get(`${this.baseUrl}/account/messages`, this.getRequestOptions());
+  }
+  deleteMessage(id): Observable<any> {
+    return this.httpClient.get(`${this.baseUrl}/account/messages/delete/${id}`, this.getRequestOptions());
+  }
+
 }

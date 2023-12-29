@@ -15,7 +15,7 @@
               <li>{{ _bid.fish.size }}cm</li>
               <li>€ {{ _bid.bid }}</li>
               <li><countdown (reached)="callback($event)" [text]="text" units="Days | Hours | Minutes | Seconds" showZeros="true"  end="{{ _bid.ended_at }}"></countdown></li>
-              <li><button class="accountFishCardButton gavelButton" routerLink="/auctions/select/{{_bid.id}}" >BID           <i class="fas fa-gavel"></i></button></li>
+              <li><button class="accountFishCardButton gavelButton" routerLink="/auctions/select/{{_bid.id}}" >BID  <i class="fas fa-gavel"></i></button></li>
           </ul>
         </div>
       </div>

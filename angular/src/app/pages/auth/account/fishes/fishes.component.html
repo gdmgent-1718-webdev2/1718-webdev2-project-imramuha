@@ -15,8 +15,10 @@
               <!--<li>{{ fish.detail }}</li>-->
               <li>{{ fish.size }} cm</li>
               <li>{{ fish.subcategory.categories.name }} - {{ fish.subcategory.name }}</li>
-              <li><button class="accountFishCardButton" routerLink="/account/fishes/edit/{{fish.id}}" ><i class="fas fa-edit"></i></button>
-                  <button class="accountFishCardButton" (click)=deleteFish(fish.id)><i class="fas fa-trash-alt"></i></button></li>
+              <li>
+                  <button class="accountFishCardButton" routerLink="/account/fishes/edit/{{fish.id}}" ><i class="fas fa-edit"></i></button>
+                  <button class="accountFishCardButton" (click)=deleteFish(fish.id)><i class="fas fa-trash-alt"></i></button>
+              </li>
           </ul>
         </div>
       </div>

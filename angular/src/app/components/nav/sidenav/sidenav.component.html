@@ -1,10 +1,10 @@
 <div class="containerSidenav">
   <ul>
-    <li [routerLinkActive]="['is-active']" routerLink="/account/profile"><button>ACCOUNT</button><i class="fas fa-user-circle" title="Account"></i></li>
-    <li [routerLinkActive]="['is-active']" routerLink="/account/messages"><button>MY MESSAGES</button><i class="fas fa-comments" title="My messages"></i></li>
+    <li style="margin-top: -10px;" [routerLinkActive]="['is-active']" routerLink="/account/profile"><button>ACCOUNT</button><i class="fas fa-user-circle" title="Account"></i></li>
+    <!--<li [routerLinkActive]="['is-active']" routerLink="/account/messages"><button>MY MESSAGES</button><i class="fas fa-comments" title="My messages"></i></li>-->
     <li [routerLinkActive]="['is-active']" routerLink="/account/fishes"><button>MY FISHES</button><i class="fas fa-fish" title="My fishes"></i></li>
     <li [routerLinkActive]="['is-active']" routerLink="/account/bids"><button>MY BIDS</button><i class="fas fa-gavel" title="My bids"></i></li>
     <li [routerLinkActive]="['is-active']" routerLink="/account/offers"><button>MY OFFERS</button><i class="fas fa-money-bill-alt" title="My offers"></i></li>
-    <li (click)="logout($event)"><button>LOGOUT</button><i class="fas fa-sign-out-alt" title="Logout"></i></li>
+    <li style="margin-bottom: -10px;" (click)="logout($event)"><button>LOGOUT</button><i class="fas fa-sign-out-alt" title="Logout"></i></li>
   </ul>
 </div>

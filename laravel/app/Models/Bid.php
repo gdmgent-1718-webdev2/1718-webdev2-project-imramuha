@@ -42,7 +42,7 @@ class Bid extends Model
      */
     public function statuses()
     {
-        return $this->belongsTo('App\Status', 'status_id');
+        return $this->belongsTo('App\Models\Status', 'status_id');
     }
 
               /**
@@ -50,6 +50,16 @@ class Bid extends Model
      */
     public function fish()
     {
-        return $this->belongsTo('App\Fish', 'fish_id');
+        return $this->belongsTo('App\Models\Fish', 'fish_id');
+    }
+
+    public function bidder()
+    {
+        return $this->belongsTo('App\Models\User', 'highest_bidder');
+    }
+
+    public function seller()
+    {
+        return $this->belongsTo('App\Models\User', 'seller_id');
     }
 }

@@ -63,9 +63,8 @@ import { TokenService } from './services/token.service';
 import { AccountService } from './services/account.service';
 
 // Problamatic
-import { SnotifyComponent, SnotifyService, ToastDefaults } from 'ng-snotify';
-import { CountdownModule, CountDown } from '../../node_modules/ng2-date-countdown/src';
-import { ImageCropperModule } from '../../node_modules/ngx-image-cropper';
+import { NotifierModule } from 'angular-notifier';
+//import { ImageCropperModule } from '../../node_modules/ngx-image-cropper';
 import { NgxUploaderModule } from 'ngx-uploader';
 //import { ImageUploadModule } from 'angular2-image-upload';
 //import { ImageUploadComponent } from 'angular2-image-upload/lib/image-upload/image-upload.component';
@@ -101,7 +100,6 @@ import { NgxUploaderModule } from 'ngx-uploader';
     PublishBidComponent,
     AuctionsComponent,
     AuctiondetailComponent,
-    // SnotifyComponent,
   ],
   imports: [
     BrowserModule,
@@ -110,7 +108,6 @@ import { NgxUploaderModule } from 'ngx-uploader';
     RouterModule,
     MatSidenavModule, 
     FormsModule,
-    // CountdownModule, BREAKS MY DAMN APP
     ReactiveFormsModule,
     MatDatepickerModule,
     MatMomentDateModule,
@@ -120,7 +117,8 @@ import { NgxUploaderModule } from 'ngx-uploader';
     MatFormFieldModule,
     MatInputModule,
     HttpClientModule,
-    NgxUploaderModule
+    NgxUploaderModule,
+    NotifierModule
   ],
   providers: [
     AuthService,
@@ -130,9 +128,7 @@ import { NgxUploaderModule } from 'ngx-uploader';
     GuestService,
     UserService,
     DatePipe,
-    { provide: 'SnotifyToastConfig', useValue: ToastDefaults },
     {provide: MAT_DATE_LOCALE, useValue: 'de-DE'},
-    SnotifyService
   ],
   bootstrap: [AppComponent],
 })

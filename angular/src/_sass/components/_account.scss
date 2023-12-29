@@ -1,12 +1,14 @@
 .containerAccount {
     background-color: map-get($colors, 'slate');
-    margin: 35px;
+    //margin: 35px;
     padding: 10px;
+    padding-bottom: 0;
     overflow: hidden;
     display: flex;
     background-color:  map-get($colors, 'slate');
     color: map-get($colors, 'snow');
     border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 40px;
     p, li {
         font-size: 11px;
     }

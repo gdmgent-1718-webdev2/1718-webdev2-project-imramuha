@@ -11,6 +11,7 @@ use App\Models\Status;
 use App\Models\Category;
 use App\Models\Customer;
 use App\Models\Subcategory;
+use App\Models\Message;
 use Carbon\Carbon;
 
 class AccountController extends Controller
@@ -148,12 +149,27 @@ class AccountController extends Controller
     }  
 
     public function showBids () {
-        $bids = Bid::orderBy('ended_at', 'desc')->with('fish', 'statuses')->where('seller_id', auth()->user()->id)->get(); 
+        $bids = Bid::orderBy('ended_at', 'desc')->with('fish', 'statuses', 'bidder', 'seller')->where('seller_id', auth()->user()->id)->get(); 
         $fishes = Fish::orderBy('name', 'desc')->where('user_id', auth()->id())->get();
         /*$user = auth()->user()->id;
         $status = Status::where('id', 1)->value('id');*/
         return response()->json([$bids, $fishes]);
     }
+
+    // show user offers
+    public function showOffers() {
+        $userId = auth()->user()->id;
+    
+        // Retrieve bids with related data
+        $bids = Bid::orderBy('ended_at', 'desc')
+            ->with('fish', 'statuses', 'bidder', 'seller')
+            ->where('seller_id', $userId)
+            ->whereJsonContains('bidders_id', $userId)
+            ->get();
+    
+        return response()->json([$bids]);
+    }
+    
 
     public function showBid ($id) {
         $bid = Bid::where('id', $id)->get();
@@ -218,4 +234,23 @@ class AccountController extends Controller
     }
     
 
+    // messages
+    public function showMessages() {
+        $loggedUser = auth()->user()->id;
+    
+        $messages = Message::with('sender', 'receiver')  // Assuming you have relationships named 'sender' and 'receiver' in your Message model
+            ->where(function ($query) use ($loggedUser) {
+                $query->where('sender_id', $loggedUser)
+                    ->orWhere('receiver_id', $loggedUser);
+            })
+            ->get();
+    
+        return response()->json([$messages]);
+    }
+
+    public function deleteMessage ($id) {
+        Message::where('id', $id)->delete();
+        $response = array('response' => "Your message has been removed from the pond!", 'success' => true);
+        return $response;
+    }
 }

@@ -4,7 +4,7 @@
 *   LOGIN
 */
 .containerLogin {
-	margin: 50px auto 0;
+	margin: 50px auto 55px;
 	width: 90%;
 	padding: 30px 10px 30px;
 	position: relative;
@@ -193,7 +193,7 @@
 
 @include breakpoint(mobilewide) {
 	.containerLogin, .containerLogin.register {
-		margin: 75px auto 0;
+		margin: 75px auto 50px;
 		width: 300px;
 		padding: 40px 10px 30px;
 	}
@@ -230,11 +230,11 @@
 
 .accountFormContainer {
 	background-color: map-get($colors, 'slate');
-	padding: 10px;
     color: white;
-	margin: 10px 10px -40px 55px;
+	margin: 40px 0 -40px 55px;
 	font-size: 11px;
 	overflow: hidden;
+	border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .buy {
@@ -246,11 +246,12 @@
 }
 
 .accountFormHeader {
+	margin-top: 0px;
 	background-color:  map-get($colors, 'bloodreina');
     color:  map-get($colors, 'snow');
     padding: 10px;
     border: none;
-	width: 100%;
+	//width: 100%;
 	font-size: 12px;
     letter-spacing: 1px;
     word-spacing: 0.5px;
@@ -357,8 +358,7 @@
 	}
 	.accountFormContainer {
 		font-size: 19px;
-		margin: 55px 35px -10px 200px;
-		padding: 35px;
+		margin: 40px 0 10px 0;
 	
 		.input-field-form-container {
 			width: 100%;
@@ -408,11 +408,14 @@
 .auctionSellerContainer {
 	width: 100%;
 	background-color: map-get($colors, 'midnight');
+	border: 1px solid map-get($colors, 'silvermoon');
 	margin: 10px 0;
+	text-align: center;
 }
 
 .auctionFishContainer {
 	width: 100%;
+	border: 1px solid map-get($colors, 'silvermoon');
 	background-color: map-get($colors, 'midnight');
 	margin: 10px 0;
 }
@@ -422,8 +425,8 @@
 		display: flex;
 	}
 	.auctionSellerContainer { 
-		width: 35%;
-		margin-left: 5%;
+		width: 38%;
+		margin-left: 2%;
 	}
 	.auctionFishContainer {
 		width: 60%;
@@ -451,18 +454,23 @@
 }
 
 .auctionSellerDetail {
-	margin-top: 50px;
+	margin-top: 20px;
 	ul {
+		margin: 0px;
 		padding: 0;
 		list-style: none;
 		li {
-			padding: 3px;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-size: 13px;
 			margin: 0 20px;
 			background-color: map-get($colors, 'slate')	;
 			border: 1px solid map-get($colors, 'bloodreina');
-			padding: 3px;
+			padding: 5px;
 			text-align: left;
 			label {		
+				text-transform: none;
+				margin-right: 5px;
 				color: map-get($colors, 'silvermoon');
 				padding-left: 3px;
 				margin-bottom: 0px;
@@ -476,7 +484,11 @@
 }
 
 .profileButton {
-	width: 85%;
+	min-width: calc(100% - 40px);
+	margin-top: 20px;
+	margin-left: 0px;
+	border-radius: 2px;
+	cursor: pointer;
 }
 
 .centeredTitle {
@@ -484,11 +496,14 @@
 }
 
 .profileImage {
+	box-sizing: border-box;
 	text-align: center;
+	margin: 0 20px;
+	//background-color: map-get($colors, 'bloodreina');
 	img {
-		border-radius: 50%;
-		margin: auto;
-		width: 50%;
+		box-sizing: border-box;
+		border: 5px solid map-get($colors, 'bloodreina');
+		max-width: 100%;
 	}
 }
 
@@ -537,7 +552,7 @@
 	img {
 		width: 200px;
 		height: 200px;
-	border-radius: 50%;
+		border-radius: 50%;
 	}
 }
 

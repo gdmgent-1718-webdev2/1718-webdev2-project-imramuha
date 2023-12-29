@@ -1,11 +1,11 @@
 
 .accountFormContainer.fishes {
-    text-align: center;
+    //text-align: center;
 }
 
 .accountFormTitleButton {
     border: none;
-    width: 100%;
+    //width: 100%;
  
 
     .accountFormTitle, .accountFormButton {
@@ -20,7 +20,9 @@
     }
     .accountFormTitle {
         padding: 10px;
-        width: 100%;
+        margin-top: 0px;
+        text-align: center;
+        //width: 100%;
     }
     .accountFormButton {
         border: none;
@@ -31,13 +33,11 @@
         letter-spacing: 1px;
         word-spacing: 1px;
         text-transform: uppercase;
-        width: 50%;
-        margin-left: 50%;
+        width: 20%;
+        margin-left: 20px;
+        cursor: pointer;
         border: 1px solid map-get($colors, 'slate');
         &:hover {
-            /*opacity: 2;
-            color: rgba(255, 255, 255, 0.6) !important;
-            -webkit-transition: 0.3s;*/
             transition: 1s;
             color: map-get($colors, 'bloodreina');;
             background-color: map-get($colors, 'midnight');
@@ -50,13 +50,12 @@
     border: none;
     -webkit-box-shadow: none;
     box-shadow: none;
-    padding: 10px;
-    margin-top: 10px;
+    padding: 25px;
     font-size: 11px;
     color: map-get($colors, 'snow');
     background-color: map-get($colors, 'bloodreina');
     text-transform: uppercase;
-    width: 30%;
+    margin: 4px 0;
     border: 1px solid map-get($colors, 'slate');
     &:hover {
         transition: 0.7s;
@@ -70,41 +69,43 @@
 
 .accountFishCard {
     display:inline-block;
-    width: 200px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    margin-bottom: 25px;
-    //background-color: map-get($colors, 'bloodreina');
+    margin: 0 20px 30px;
+    width: 150px;
+    border: 3px solid map-get($colors, 'bloodreina');
     text-align: center;
-
+    font-size: 13px;
     .accountFishCardHeader{
-        background-color: map-get($colors, 'slate');
-        min-height: 200px;
-        width: 200px;
-        height: 300px;
+        background-color: map-get($colors, 'bloodreina');
+        width: 150px;
+        height: 150px;
         img {
-            min-width: 200px;
-            max-width:100%;
-            max-height:100%;
+            box-sizing: border-box;
+            border: 2px solid map-get($colors, 'bloodreina');
+            border-bottom: 5px solid map-get($colors, 'bloodreina');
+            min-width: 150px;
+            max-width: 100%;
+            max-height: 100%;
         }
     }
 
     .accountFishCardDetail {
         background-color: map-get($colors, 'slate');
-        min-width: 200px;
+        width: 150px;
         ul {
             padding: 0;
             list-style-type: none;
+            margin: 0px;
         }
         li {
-            border-bottom: 5px solid map-get($colors, 'bloodreina');
+            text-align: left;
+            border-bottom: 3px solid map-get($colors, 'bloodreina');
             color: rgba(255, 255, 255, 0.6);
-            border-right: 1px solid rgba(255, 255, 255, 0.2);
             overflow: hidden;
             //background-color: map-get($colors, 'bloodreina');
-            width: 100%;
-            padding: 10px 5px;
+            padding: 5px;
             &:last-child {
                 border-bottom: none;
+                text-align: center;
             }
         }
     }
@@ -112,21 +113,18 @@
 
 @include breakpoint(mobilewide) { 
     .accountFishCard {
-        margin: 0 3px 30px;
+        margin: 0 20px 30px;
     }
     .accountFishCardButton {
-  
-        padding: 15px;
+        padding: 25px;
         font-size: 15px;
-
     }
 }
 
 @include breakpoint(tablet) {
     .accountFormTitleButton { 
         .accountFormTitle {
-
-            width: 100%;
+            //width: 100%;
             margin-bottom: 20px;
             font-size: 30px;
             letter-spacing: 3px;
@@ -138,8 +136,7 @@
             font-size: 15px;
             letter-spacing: 3px;
             word-spacing: 1px;
-            width: 30%;
-            margin-left: 70%;
+            width: 25%;
         }
     }
 

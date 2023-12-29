@@ -26,10 +26,7 @@ export class FishesComponent implements OnInit {
 
 
   ngOnInit() {
-  
     this.getAllFishes();
-
-
   }
 
   getAllFishes(){
@@ -45,7 +42,7 @@ export class FishesComponent implements OnInit {
 
 
   deleteFish(id){
-
+    
     this.notify.confirm("Are you sure you want to delete this Fish? ", {timeout: 5000,  buttons: [
       {text: 'Yes', action: () => this.accountService
       .deleteFish(id)

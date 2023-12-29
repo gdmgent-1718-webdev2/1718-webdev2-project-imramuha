@@ -65,10 +65,10 @@
             </div>
   </div>
                                            
-  <div class="homeItem">
+  <div class="homeItem latestBidding">
 
           <h4 class="accountFormHeader  centeredTitles">LATEST ONGOING AUCTIONS</h4>
-          <button *ngIf=!loggedIn class="accountFishCardButton loginBtnn"  routerLink="login">LOGIN</button>
+          <button *ngIf=!loggedIn class="accountFishCardButton"  routerLink="login">LOGIN</button>
                                       
         <div  class="accountFishCard"  *ngFor="let _bid of bids">
         <div class="accountFishCardHeader"><img src="{{_bid.fish.image}}" ></div>

@@ -35,4 +35,10 @@ Route::group([
     Route::get('/auctions/select/{id}', 'Frontend\AccountController@showOngoingBid');
     Route::post('/auctions/raise-bid', 'Frontend\AccountController@raiseBid');
 
+    // offers (bids a user has put an offer on)
+    Route::get('/account/offers', 'Frontend\AccountController@showOffers');
+
+    // message
+    Route::get('/account/messages', 'Frontend\AccountController@showMessages');
+    Route::get('/account/messages/delete/{id}', 'Frontend\AccountController@deleteMessage');
 });
