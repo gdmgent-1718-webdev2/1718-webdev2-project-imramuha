@@ -41,4 +41,6 @@ Route::group([
     // message
     Route::get('/account/messages', 'Frontend\AccountController@showMessages');
     Route::get('/account/messages/delete/{id}', 'Frontend\AccountController@deleteMessage');
+    Route::post('/account/messages/create', 'Frontend\AccountController@storeMessage');
+    Route::get('/account/users', 'Frontend\AccountController@showUsers');
 });

@@ -11,7 +11,7 @@
             <div class="auctionFishContainer">
 
                 <div class="accountFormTitleButton">
-                    <h4 class="accountFormTitle centeredTitle">MESSAGES</h4>
+                    <h4 class="accountFormTitle centeredTitle">MESSAGES</h4><button class="accountFormButton" routerLink="/account/messages/create">SEND A MESSAGE<i class="fas fa-plus-square"></i></button>
                 </div>
                 <div class="auctionFishDetail"></div>
                     <div *ngFor="let message of messages">
@@ -20,7 +20,7 @@
                             <li>time: {{ message.created_at }}</li>
                             <li>sender: {{ message.sender.email }}</li>
                             <li>receiver:{{ message.receiver.email }}</li>
-                            <li><button class="accountFishCardButton" routerLink="/account/message/send/{{message.id}}" ><i class="fas fa-paper-plane"></i></button>           
+                            <li><!--<button class="accountFishCardButton" routerLink="/account/message/send/{{message.id}}" ><i class="fas fa-paper-plane"></i></button> -->          
                                 <button class="accountFishCardButton" (click)=deleteMessage(message.id)><i class="fas fa-trash-alt"></i></button>
               </li>
                         </ul>

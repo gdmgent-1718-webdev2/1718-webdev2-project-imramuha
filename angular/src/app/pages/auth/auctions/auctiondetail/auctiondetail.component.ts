@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { SnotifyService } from 'ng-snotify';
+import {NotifierService} from 'angular-notifier';
 
 import { Bid } from '../../../../models/bid';
 
 import {ActivatedRoute, Params, Router} from '@angular/router'; //s
-import * as moment from 'moment';
 
 import { AccountService } from '../../../../services/account.service';
 
@@ -15,6 +14,8 @@ import { AccountService } from '../../../../services/account.service';
 })
 export class AuctiondetailComponent implements OnInit {
 
+  private readonly notifier : NotifierService;
+
   _bid: Bid;    
   currentBid: any;
 
@@ -22,9 +23,10 @@ export class AuctiondetailComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private accountService: AccountService,
-    private notify: SnotifyService,
-    private Notfiy: SnotifyService
-  ) { }
+    notifierService : NotifierService, 
+    ) {
+    this.notifier = notifierService; 
+  }
 
   ngOnInit() {
     this.getAuction();
@@ -58,8 +60,7 @@ export class AuctiondetailComponent implements OnInit {
       .subscribe(response => {
         console.log(response);
         this.router.navigate(['/auctions']);
-        this.Notfiy.success(response.response,{timeout:2500});
-      
+        this.notifier.notify("success", response.response);
       })
   
     }

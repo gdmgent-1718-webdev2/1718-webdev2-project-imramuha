@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
-import { SnotifyService } from 'ng-snotify';
+import { NotifierService } from 'angular-notifier';
 
 @Component({
   selector: 'app-password-reset-request',
@@ -9,7 +9,7 @@ import { SnotifyService } from 'ng-snotify';
 })
 export class PasswordResetRequestComponent implements OnInit {
 
-
+  private readonly notifier : NotifierService;
   public error = null;
 
   public form = {
@@ -18,23 +18,23 @@ export class PasswordResetRequestComponent implements OnInit {
 
   constructor(
     private Auth: AuthService,
-    private notify: SnotifyService,
-    private Notfiy:SnotifyService
-  ) { }
+    notifierService : NotifierService, 
+    ) {
+    this.notifier = notifierService;
+  }
 
   ngOnInit() {
   }
 
   onSubmit() {
-    this.Notfiy.info('Your email is being checked...' ,{timeout:2000})
+    this.notifier.notify("info", 'Your email is being checked...');
     this.Auth.sendPasswordResetLink(this.form).subscribe(
       data => this.handleResponse(data),
-      error => this.notify.error(error.error.error)
     );
 }
 
   handleResponse(res) {
-    this.Notfiy.success(res.data,{timeout:0});
+    this.notifier.notify("success", res.data);
     this.form.email = null;
   }
 }

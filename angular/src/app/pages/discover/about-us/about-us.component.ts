@@ -1,7 +1,5 @@
 // @ts-nocheck
 import { Component, OnInit } from '@angular/core';
-import { SnotifyService } from 'ng-snotify';
-
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import { AuthStatusService } from '../../../services/auth-status.service';
 
@@ -36,8 +34,6 @@ throw new Error('Method not implemented.');
     private router: Router,
     private route: ActivatedRoute,
     private accountService: AccountService,
-    private notify: SnotifyService,
-    private Notfiy: SnotifyService,
     private AuthStatus: AuthStatusService,
   ) {
    }
@@ -47,7 +43,6 @@ throw new Error('Method not implemented.');
     this.getAllAuctions();
 
   }
-
   
   getAllAuctions(){
     this.accountService

@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NotifierService} from 'angular-notifier';
 import {ActivatedRoute, Router} from '@angular/router';
-
 import {AccountService} from '../../../services/account.service';
 
 @Component({selector: 'app-account', templateUrl: './account.component.html', styleUrls: ['./account.component.scss']})
@@ -11,7 +10,12 @@ export class AccountComponent implements OnInit {
     private _user : any;
     private messages : any;
 
-    constructor(private accountService : AccountService, notifierService : NotifierService, private route : ActivatedRoute, private router : Router) {
+    constructor(
+        private accountService : AccountService, 
+        notifierService : NotifierService, 
+        private route : ActivatedRoute, 
+        private router : Router
+        ) {
         this.notifier = notifierService;
     }
 
@@ -40,7 +44,7 @@ export class AccountComponent implements OnInit {
             })
     }
 
-    deleteMessage(id) {
+    deleteMessage(id) {     
         this
             .accountService
             .deleteMessage(id)
@@ -48,7 +52,7 @@ export class AccountComponent implements OnInit {
                 this.ngOnInit();
                 this
                     .notifier
-                    .notify("succes", response.response);;
+                    .notify("success", response.response);
             });
     }
 

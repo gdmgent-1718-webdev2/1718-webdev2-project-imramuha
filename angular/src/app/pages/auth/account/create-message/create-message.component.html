@@ -1,0 +1,41 @@
+<app-sidenav></app-sidenav>
+<div class="accountFormContainer">
+
+    <div>
+        <h4 class="accountFormHeader">Add a fish to your pond</h4>
+    </div>
+
+    <div class="accountFormBody">
+        <form #createMessageForm="ngForm" (submit)="createMessage()">
+            <div>
+
+                <div  class="input-field-form-container">
+                    <input class="input-field-form"  placeholder="Message..." type="text" name="name" required maxlength="45"  [(ngModel)]="model.message" #message="ngModel">
+                </div>
+                <div class="accountFormError" *ngIf="name?.errors&& (name.dirty || name.touched)">                            
+                    <div [hidden]="!name.errors.required"> 
+                        <span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;Message can't be sent empty.
+                    </div>
+                </div>
+
+                <div class="input-field-form-container">
+                    <select class="input-field-form" name="receiver_id"  [(ngModel)]="model.receiver_id" #receiver_id="ngModel" required>
+                        <option [value]='undefined' disabled selected placeholder="Choose a receiver..." selected disabled>Choose a receiver of the message...</option>
+                        <option *ngFor="let _user of _users" value="{{_user.user.id}}">{{ _user.first_name }} {{ _user.last_name }} - {{ _user.user.email}}</option>
+                    </select>
+                </div>  
+                <div class="accountFormError" *ngIf="receiver_id?.errors && (receiver_id.dirty || receiver_id.touched)">                            
+                    <div [hidden]="!receiver_id.errors.required"> 
+                        <span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;Please choose a receiver.
+                    </div>
+                </div>
+
+                <div>
+                    <button class="accountFormBtn" type="button" (click)="goBack()">CANCEL</button>
+                    <button class="accountFormBtn" type="submit" [disabled]="!createMessageForm.form.valid">ADD</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

@@ -18,8 +18,7 @@ import { AuctiondetailComponent } from './pages/auth/auctions/auctiondetail/auct
 // Components - account 
 import { AccountComponent } from './pages/auth/account/account.component';
 import { EditProfileComponent } from './pages/auth/account/edit-profile/edit-profile.component';
-
-import { MessagesComponent } from './pages/auth/account/messages/messages.component';
+import { CreateMessageComponent } from './pages/auth/account/create-message/create-message.component';
 
 import { FishesComponent } from './pages/auth/account/fishes/fishes.component';
 import { CreateFishComponent } from './pages/auth/account/fishes/create-fish/create-fish.component';
@@ -105,8 +104,8 @@ const appRoutes: Routes = [
     canActivate: [UserService], 
   },
   {
-    path: 'account/messages',
-    component: MessagesComponent,
+    path: 'account/messages/create',
+    component: CreateMessageComponent,
     canActivate: [UserService], 
   },
   {

@@ -27,6 +27,10 @@ export class AccountService {
     return this.httpClient.get(`${this.baseUrl}/account/profile`, this.getRequestOptions());
   }
 
+  showAllUsers(): Observable<any> {
+    return this.httpClient.get(`${this.baseUrl}/account/users`, this.getRequestOptions());
+  }
+
   selectUser(): Observable<any> {
     return this.httpClient.get(`${this.baseUrl}/account/profile/select`, this.getRequestOptions());
   }
@@ -117,5 +121,8 @@ export class AccountService {
   deleteMessage(id): Observable<any> {
     return this.httpClient.get(`${this.baseUrl}/account/messages/delete/${id}`, this.getRequestOptions());
   }
-
+  createMessage(info): Observable<any> {
+    const data = JSON.stringify(info);
+    return this.httpClient.post(`${this.baseUrl}/account/messages/create`, data, this.getRequestOptions());
+  }
 }

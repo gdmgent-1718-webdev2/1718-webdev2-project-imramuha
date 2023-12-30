@@ -9,6 +9,7 @@ use App\Models\Fish;
 use App\Models\Bid;
 use App\Models\Status;
 use App\Models\Category;
+use App\Models\User;
 use App\Models\Customer;
 use App\Models\Subcategory;
 use App\Models\Message;
@@ -252,5 +253,24 @@ class AccountController extends Controller
         Message::where('id', $id)->delete();
         $response = array('response' => "Your message has been removed from the pond!", 'success' => true);
         return $response;
+    }
+
+    
+    public function storeMessage(Request $request) {
+
+        $message = Message::create([
+            'message' => $request->input('message'),
+            'receiver_id' => $request->input('receiver_id'),
+            'sender_id' => auth()->user()->id,
+        ]);
+ 
+        $response = array('response' => 'Your message has been sent to the pond!', 'succes' => true);
+        return $response;
+    }
+
+
+    public function showUsers () {
+        $users = Customer::with('user')->get();
+        return response()->json([$users]);
     }
 }
