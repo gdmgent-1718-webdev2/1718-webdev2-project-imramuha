@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SnotifyService } from 'ng-snotify';
-
-
+import {NotifierService} from 'angular-notifier';
 
 import {ActivatedRoute, Params, Router} from '@angular/router';
-import { Fish } from '../../../models/fish';
-import * as moment from 'moment';
-
 import { AccountService } from '../../../services/account.service';
 
 @Component({
@@ -17,6 +12,7 @@ import { AccountService } from '../../../services/account.service';
 export class AuctionsComponent implements OnInit {
 
   private bids: any;
+  private readonly notifier : NotifierService;
 
 
   text:any = {
@@ -34,10 +30,10 @@ export class AuctionsComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private accountService: AccountService,
-    private notify: SnotifyService,
-    private Notfiy: SnotifyService
+    notifierService : NotifierService,
   ) {
-   }
+    this.notifier = notifierService; 
+  }
 
   ngOnInit() {
     this.getAllAuctions();
@@ -50,11 +46,7 @@ export class AuctionsComponent implements OnInit {
     .showAuctions()
     .subscribe(bids => {
       this.bids = bids[0];
-      console.log(this.bids);
-
-      //this.bids.ended_at = Date.parse(this.bids.ended_at);
-      console.log(this.bids);
-
+      //console.log(this.bids);
     })
   }
 }

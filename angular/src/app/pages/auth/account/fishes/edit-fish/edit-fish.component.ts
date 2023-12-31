@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {SnotifyService} from 'ng-snotify';
+import {NotifierService} from 'angular-notifier';
 import * as moment from 'moment';
 
 import {Fish} from '../../../../../models/fish';
@@ -14,12 +14,20 @@ export class EditFishComponent implements OnInit {
     minDate = new Date(2023, 2, 1);
     maxDate = this.getTomorrow(); // Use the getTomorrow function
 
+    private readonly notifier : NotifierService;
     public file_src : string = "../assets/img/default_avatar.png";
     fish : Fish;
     private _categories : any;
     private _subcategories : any;
 
-    constructor(private accountService : AccountService, private notify : SnotifyService, private Notfiy : SnotifyService, private route : ActivatedRoute, private router : Router,) {}
+    constructor(
+        private accountService : AccountService, 
+        notifierService : NotifierService, 
+        private route : ActivatedRoute, 
+        private router : Router,
+        ) {
+            this.notifier = notifierService;
+        }
 
     ngOnInit() {
         this.getOneFish();
@@ -110,9 +118,7 @@ export class EditFishComponent implements OnInit {
                 this
                     .router
                     .navigate(['/account/fishes']);
-                this
-                    .Notfiy
-                    .success(response.response, {timeout: 2500});
+                this.notifier.notify("success", response.response);
             });
     }
 

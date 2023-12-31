@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {SnotifyService} from 'ng-snotify';
+import {NotifierService} from 'angular-notifier';
 import {AuthService} from '../../../../../services/auth.service';
 import {TokenService} from '../../../../../services/token.service';
 import {AuthStatusService} from '../../../../../services/auth-status.service';
@@ -15,17 +15,28 @@ declare let $ : any;
 @Component({selector: 'app-create-fish', templateUrl: './create-fish.component.html', styleUrls: ['./create-fish.component.scss']})
 export class CreateFishComponent implements OnInit {
 
+    
     minDate = new Date(2023, 2, 1);
     maxDate = this.getTomorrow(); // Use the getTomorrow function
     model = new Fish();
 
+    private readonly notifier : NotifierService;
     public file_src : string = "../assets/img/default_avatar.png";
     public error = null;
     private _categories : any;
     private _subcategories : any;
     private dateFormat : any;
 
-    constructor(private router : Router, private accountService : AccountService, private notify : SnotifyService, private Notfiy : SnotifyService, private Token : TokenService, private AuthStatus : AuthStatusService, private Auth : AuthService,) {}
+    constructor(
+        private router : Router, 
+        private accountService : AccountService, 
+        notifierService : NotifierService, 
+        private Token : TokenService, 
+        private AuthStatus : AuthStatusService, 
+        private Auth : AuthService,
+        ) {
+            this.notifier = notifierService; 
+        }
 
     ngOnInit() {
         this.getAllCategories();
@@ -60,9 +71,7 @@ export class CreateFishComponent implements OnInit {
         this
             .router
             .navigate(['/account/fishes']);
-        this
-            .notify
-            .info('There was no fish added.');
+            this.notifier.notify("info", "No fish was added.");
     }
     imageUpload(event : any) {
         const file = event.target.files[0];
@@ -102,9 +111,7 @@ export class CreateFishComponent implements OnInit {
                 this
                     .router
                     .navigateByUrl('/account/fishes');
-                this
-                    .Notfiy
-                    .success(response.response, {timeout: 2500});
+                this.notifier.notify("success", response.response);
             });
     }
 

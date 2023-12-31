@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { SnotifyService } from 'ng-snotify';
-import {ActivatedRoute, Params, Router} from '@angular/router';
+import { Router} from '@angular/router';
 import { AccountService } from '../../../../services/account.service';
 
 @Component({
@@ -11,14 +10,11 @@ import { AccountService } from '../../../../services/account.service';
 })
 export class OffersComponent implements OnInit {
 
-  
   private offers: any;
 
   constructor( 
     private router: Router,
     private accountService: AccountService,
-    private notify: SnotifyService,
-    private Notfiy:SnotifyService,
   ) { }
   
   ngOnInit() {

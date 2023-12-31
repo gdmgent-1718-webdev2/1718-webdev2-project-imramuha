@@ -2,7 +2,7 @@ import { Component, OnInit,  ChangeDetectorRef } from '@angular/core';
 
 
 import {ActivatedRoute, Params, Router} from '@angular/router';
-import { SnotifyService } from 'ng-snotify';
+import {NotifierService} from 'angular-notifier';
 
 import { Bid } from '../../../../../models/bid';
 
@@ -17,9 +17,9 @@ import * as moment from 'moment';
 })
 export class PublishBidComponent implements OnInit {
 
+  private readonly notifier : NotifierService;
+  
   todayDate = new Date().getDate();
-
-
   // before tomorrow || after 2 weeks
   minDate = new Date(new Date().setDate(this.todayDate + 1));
   maxDate = new Date(new Date().setDate(this.todayDate + 14));
@@ -34,15 +34,12 @@ export class PublishBidComponent implements OnInit {
   constructor(
     private cdRef: ChangeDetectorRef,
     private accountService: AccountService,
-    private notify: SnotifyService,
-    private Notfiy: SnotifyService,
+    notifierService : NotifierService, 
     private route: ActivatedRoute,
     private router: Router,
-    
-  ) 
-  {
-
-   }
+    ) {
+    this.notifier = notifierService; 
+  }
 
   ngOnInit() {
     this.getOneBid();
@@ -106,7 +103,7 @@ export class PublishBidComponent implements OnInit {
     .subscribe(response => {
       console.log(response);
       this.router.navigate(['/account/bids']);
-      this.Notfiy.success(response.response,{timeout:2500});
+      this.notifier.notify("success", response.response);
     
     })
 

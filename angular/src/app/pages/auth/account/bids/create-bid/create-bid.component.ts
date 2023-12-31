@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Params, Router} from '@angular/router';
-import { SnotifyService } from 'ng-snotify';
+import {Router} from '@angular/router';
+import {NotifierService} from 'angular-notifier';
 
 import { Bid } from '../../../../../models/bid';
-
 import { AccountService } from '../../../../../services/account.service';
-import * as moment from 'moment';
 
 @Component({
   selector: 'app-create-bid',
@@ -14,8 +12,9 @@ import * as moment from 'moment';
 })
 export class CreateBidComponent implements OnInit {
 
-  todayDate = new Date().getDate();
+  private readonly notifier : NotifierService;
 
+  todayDate = new Date().getDate();
   // before tomorrow || after 2 weeks
   minDate = new Date(new Date().setDate(this.todayDate + 1));
   maxDate = new Date(new Date().setDate(this.todayDate + 14));
@@ -29,8 +28,10 @@ export class CreateBidComponent implements OnInit {
   constructor(
     private accountService: AccountService,
     private router: Router,
-    private Notfiy:SnotifyService,
-  ) { }
+    notifierService : NotifierService, 
+    ) {
+    this.notifier = notifierService; 
+  }
 
   ngOnInit() {
     this.getMyFishes();
@@ -55,7 +56,7 @@ export class CreateBidComponent implements OnInit {
       .addBid(this.model)
       .subscribe(response => {     
       this.router.navigateByUrl('/account/bids');
-      this.Notfiy.success(response.response,{timeout:2500});
+      this.notifier.notify("success", response.response);
     })
   }
 

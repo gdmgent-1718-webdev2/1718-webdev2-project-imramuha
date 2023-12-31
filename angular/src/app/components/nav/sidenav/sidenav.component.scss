@@ -21,7 +21,7 @@
         font-size: 17px;
         cursor: pointer;
         border-radius: 30px;
-        padding: 3.5px 3px 0.8px;
+        padding: 4px;
         text-align: center;
         //width: 35px;
         height: 35px;
@@ -40,6 +40,9 @@
             display: none;
             letter-spacing: 2px;
             text-align: left;
+        }
+        i {
+            margin-top: 8px;
         }
     }
 }

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params, Router} from '@angular/router';
-import {SnotifyService} from 'ng-snotify';
+import {NotifierService} from 'angular-notifier';
 
 import {AccountService} from '../../../../services/account.service';
 import {Customer} from '../../../../models/customer';
@@ -12,8 +12,16 @@ export class EditProfileComponent implements OnInit {
 
     _user : Customer;
     public file_src : string = "../assets/img/default_avatar.png";
+    private readonly notifier : NotifierService;
 
-    constructor(private accountService : AccountService, private Notfiy : SnotifyService, private route : ActivatedRoute, private router : Router,) {}
+    constructor(
+        private accountService : AccountService, 
+        notifierService : NotifierService, 
+        private route : ActivatedRoute, 
+        private router : Router,
+        ) {
+            this.notifier = notifierService; 
+        }
 
     ngOnInit() {
         this.showUser();
@@ -74,9 +82,7 @@ export class EditProfileComponent implements OnInit {
               this
                   .router
                   .navigate(['/account/profile']);
-              this
-                  .Notfiy
-                  .success(response.response, {timeout: 2500});
+                this.notifier.notify("success", response.response);
           });
   }
 

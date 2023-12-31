@@ -10,7 +10,7 @@
             <div>
 
                 <div  class="input-field-form-container">
-                    <input class="input-field-form"  placeholder="Message..." type="text" name="name" required maxlength="45"  [(ngModel)]="model.message" #message="ngModel">
+                    <input class="input-field-form"  placeholder="Message..." type="text" name="name" required maxlength="256"  [(ngModel)]="model.message" #message="ngModel">
                 </div>
                 <div class="accountFormError" *ngIf="name?.errors&& (name.dirty || name.touched)">                            
                     <div [hidden]="!name.errors.required"> 

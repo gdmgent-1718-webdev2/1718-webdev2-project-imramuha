@@ -4,598 +4,679 @@
 *   LOGIN
 */
 .containerLogin {
-	margin: 50px auto 55px;
-	width: 90%;
-	padding: 30px 10px 30px;
-	position: relative;
-	border: 1px solid rgba(255, 255, 255, 0.05);
-	color: map-get($colors, 'snow');
-	background-color: map-get($colors, 'slate');
+    margin: 50px auto 55px;
+    width: 90%;
+    padding: 30px 10px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: map-get($colors, 'snow');
+    background-color: map-get($colors, 'slate');
 }
 
 .containerLogin.passwordReset {
-	margin: 65px auto 0;
-	padding: 0px;
+    margin: 65px auto 0;
+    padding: 0;
 }
 
 .containerLogin.passwordResetResponse {
-	margin: 65px auto 0;
-	padding: 0px;
+    margin: 65px auto 0;
+    padding: 0;
 }
 
 .containerLogin.register {
-	margin: 40px auto 0;
-	width: 90%;
-	padding: 30px 10px 10px;
+    margin: 40px auto 0;
+    width: 90%;
+    padding: 30px 10px 10px;
 }
 
 .formTitle {
-	font-size: 1.5em;
-	float: left;
-	font-family: 'Muli', sans-serif;
-	font-weight: 100;
-	margin: 0px 0 30px;
+    font-size: 1.5em;
+    float: left;
+    font-family: 'Muli', sans-serif;
+    font-weight: 100;
+    margin: 0 0 30px;
 }
 
 .input-field-form-container {
-	display: -ms-flexbox; /* IE10 */
-	display: flex;
-	width: 100%;
-	margin-bottom: 20px;
+    display: -ms-flexbox;
+    /* IE10 */
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .input-field-form-container.register {
-	margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .input-field-form-container.register.last {
-	margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
-.input-field-form-container.passwordReset, .formBtn.passwordReset {
-	margin: 30px auto;
-	width: 93%;
+.formBtn.passwordReset,
+.input-field-form-container.passwordReset {
+    margin: 30px auto;
+    width: 93%;
 }
 
 .input-field-form-container.passwordReset.response {
-	margin: 10px auto;
-	width: 93%;
+    margin: 10px auto;
+    width: 93%;
 }
 
 .input-field-form-container.passwordReset.response.first {
-	margin: 30px auto 10px;
+    margin: 30px auto 10px;
 }
 
- .formBtn.passwordReset {
-	display: block;
+.formBtn.passwordReset {
+    display: block;
 }
 
 .formIcon {
-	padding: 15px;
-	background: map-get($colors, 'midnight');
-	color: white;
-	min-width: 50px;
-	text-align: center;
+    padding: 15px;
+    background: map-get($colors, 'midnight');
+    color: white;
+    min-width: 50px;
+    text-align: center;
 }
 
 .formKey {
-	margin-top: -10px;
+    margin-top: -10px;
 }
 
 .input-field-form {
-	width: 100%;
-	padding: 10px;
-	background: map-get($colors, 'midnight');
-	outline-color: map-get($colors, 'midnight');
-	box-shadow: none;
-	border: 2px solid map-get($colors, 'midnight');
-	color: map-get($colors, 'snow');
+    width: 100%;
+    padding: 10px;
+    background: map-get($colors, 'midnight');
+    outline-color: map-get($colors, 'midnight');
+    box-shadow: none;
+    border: 2px solid map-get($colors, 'midnight');
+    color: map-get($colors, 'snow');
 }
 
 .formBottomText a {
-	text-decoration: none;
-	color: map-get($colors, 'snow');
-	font-family: 'Muli', sans-serif;
-	font-weight: 100;
-	font-size: 0.7em;
-	margin: 0;
-	color: rgba(255,255,255,.60);
-	&:hover { 
-        color: map-get($colors, 'snow');;
-		transition: 0.3s;
-		border-bottom: 1px solid rgba(255,255,255,.70);
+    text-decoration: none;
+    color: map-get($colors, 'snow');
+    font-family: 'Muli', sans-serif;
+    font-weight: 100;
+    font-size: 0.7em;
+    margin: 0;
+    color: rgba(255,255,255,.60);
+    &:hover {
+        color: map-get($colors, 'snow');
+        transition: 0.3s;
+        border-bottom: 1px solid rgba(255,255,255,.70);
     }
 }
-
 .ng-invalid:not(form) {
-    border-left: 5px solid #542c2c
+    border-left: 5px solid #542c2c;
 }
-
 .ng-valid:not(form) {
-    border-left: 5px solid #31542c
+    border-left: 5px solid #31542c;
 }
 
 .input-field-form {
-	border: 2px solid map-get($colors, 'midnight');
+    border: 2px solid map-get($colors, 'midnight');
 }
 
 /* Set a style for the submit button */
 .formBtn {
-	background-color: map-get($colors, 'bloodreina');
-	color: white;
-	padding: 10px 20px;
-	border: none;
-	cursor: pointer;
-	width: 100%;
-	opacity: 0.9;
-	letter-spacing: 2px;
+    background-color: map-get($colors, 'bloodreina');
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    letter-spacing: 2px;
 }
 
 /* Set a style for the submit button */
 .passwordResetHeader {
-	background-color: map-get($colors, 'bloodreina');
-	color: white;
-	padding: 10px 20px;
-	border: none;
-	width: 100%;
-	letter-spacing: 2px;
-	word-spacing: 8px;
-	text-align: center;
+    background-color: map-get($colors, 'bloodreina');
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    width: 100%;
+    letter-spacing: 2px;
+    word-spacing: 8px;
+    text-align: center;
 }
 
 .formAlert {
-	font-size: 0.7em;
-	position: relative;
-	padding: .25rem 1rem;
-	text-align: center;
+    font-size: 0.7em;
+    position: relative;
+    padding: 0.25rem 1rem;
+    text-align: center;
     margin: 1rem 0;
     border: 1px solid transparent;
-	border-radius: .25rem;
+    border-radius: 0.25rem;
 }
 
 .formAlert-register {
-	font-size: 0.6em;
-	position: relative;
-	padding: .25rem 1rem;
-	text-align: center;
+    font-size: 0.6em;
+    position: relative;
+    padding: 0.25rem 1rem;
+    text-align: center;
     margin: 0.2rem 0;
     border: 1px solid transparent;
-	border-radius: .25rem;
+    border-radius: 0.25rem;
 }
-
 .formBtn:hover {
-	opacity: 2; 
-	color: rgba(255,255,255,.60);
-	transition: 0.3s;
+    opacity: 2;
+    color: rgba(255,255,255,.60);
+    transition: 0.3s;
 }
-
 @include breakpoint(mobile) {
-	.containerLogin {
-		width: 70%;
-		padding: 30px 10px 30px;
-	}
-	.containerLogin.register {
-		width: 80%;
-	}
-	.formTitle {
-		font-size: 1.8em;
-	}
-	.input-field-form-container {
-		margin: 30px 0px;
-	}
-	.input-field-form-container.register {
-		margin: 0px;
-	}	
-	.input-field-form-container.register.last {
-		margin: 20px inherit;
-	}
+    .containerLogin {
+        width: 70%;
+        padding: 30px 10px;
+    }
+    .containerLogin.register {
+        width: 80%;
+    }
+    .formTitle {
+        font-size: 1.8em;
+    }
+    .input-field-form-container {
+        margin: 30px 0;
+    }
+    .input-field-form-container.register {
+        margin: 0;
+    }
+    .input-field-form-container.register.last {
+        margin: 20px inherit;
+    }
 }
-
 @include breakpoint(mobilewide) {
-	.containerLogin, .containerLogin.register {
-		margin: 75px auto 50px;
-		width: 300px;
-		padding: 40px 10px 30px;
-	}
-	.containerLogin.register {
-		margin: 70px auto 0;
-		padding: 20px 10px 10px;
-	}
-	.input-field-form-container.register.last {
-		margin: 10px inherit;
-	}
-	.formTitle {
-		font-size: 2em;
-		margin-top: 0px;
-	}
-	.input-field-form-container {
-		margin: 0px 0px 20px;
-	}
-	.formBtn {
-		margin: 20px 0px 0px;
-	}
-	.formBtn.register {
-		margin: 0px 0px 0px;
-	}
-	.formAlert {
-		padding: .25rem 1rem;
-		margin: 0rem 0;
-	}
-	.formKey-register {
-		margin-bottom: 0px;
-	}
+    .containerLogin,
+    .containerLogin.register {
+        margin: 75px auto 50px;
+        width: 300px;
+        padding: 40px 10px 30px;
+    }
+    .containerLogin.register {
+        margin: 70px auto 0;
+        padding: 20px 10px 10px;
+    }
+    .input-field-form-container.register.last {
+        margin: 10px inherit;
+    }
+    .formTitle {
+        font-size: 2em;
+        margin-top: 0;
+    }
+    .input-field-form-container {
+        margin: 0 0 20px;
+    }
+    .formBtn {
+        margin: 20px 0 0;
+    }
+    .formBtn.register {
+        margin: 0;
+    }
+    .formAlert {
+        padding: 0.25rem 1rem;
+        margin: 0;
+    }
+    .formKey-register {
+        margin-bottom: 0;
+    }
 }
 
 // ACCOUNT/CLIENT PANEL FORMS
 
 .accountFormContainer {
-	background-color: map-get($colors, 'slate');
+    background-color: map-get($colors, 'slate');
     color: white;
-	margin: 40px 0 -40px 55px;
-	font-size: 11px;
-	overflow: hidden;
-	border: 1px solid rgba(255, 255, 255, 0.05);
+    margin: 40px 0 -40px 55px;
+    font-size: 11px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+	padding: 0 0 20px;
+}
+
+.accountFormBody {
+	padding: 0 20px;
 }
 
 .buy {
-	margin: 10px 10px -40px 10px;
+    margin: 10px 10px -40px;
 }
 
 .gavelButton {
-	width: 80%;
+    width: 80%;
 }
 
 .accountFormHeader {
-	margin-top: 0px;
-	background-color:  map-get($colors, 'bloodreina');
-    color:  map-get($colors, 'snow');
+    margin-top: 0;
+    background-color: map-get($colors, 'bloodreina');
+    color: map-get($colors, 'snow');
     padding: 10px;
     border: none;
-	//width: 100%;
-	font-size: 12px;
+    font-size: 12px;
     letter-spacing: 1px;
     word-spacing: 0.5px;
-	text-align: left;
-	text-transform: uppercase;
+    text-align: left;
+    text-transform: uppercase;
 }
 
 .accountFormBtn {
-	background-color:  map-get($colors, 'bloodreina');
-    color:  map-get($colors, 'snow');
-    padding: 10px 10px;
+    background-color: map-get($colors, 'bloodreina');
+    color: map-get($colors, 'snow');
+    padding: 10px;
     border: none;
     cursor: pointer;
-    width: 100%;
     opacity: 0.9;
-	//margin: 20px 0px 0px;
-	font-size: 12px;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	width: 48%;
-	&:hover {
-		opacity: 2;
-		color: rgba(255, 255, 255, 0.6) !important;
-		-webkit-transition: 0.3s;
-		transition: 0.3s;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+	min-width: 100px;
+    &:hover {
+        opacity: 2;
+        color: rgba(255, 255, 255, 0.6) !important;
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+    }
+	&:first-of-type {
+		float: left;
+	}
+	&:last-of-type {
+		float:right;
 	}
 }
 
 .accountFormError {
-	font-size: 9px;
-	margin: -10px 0 10px;
-	color: rgba(255, 255, 255, 0.6) !important;
+    font-size: 9px;
+    margin: -10px 0 10px;
+    color: rgba(255, 255, 255, 0.6) !important;
 }
 
 .accountFormContainer img.formImg {
-	margin: -10px auto 0;
-	height: 50px;
-	width: 50px;
+    margin: -10px auto 0;
+    height: 50px;
+    width: 50px;
 }
 
 .input-field-form-container.imgPick {
-	padding: 30px 0 0 30px;
-	background-color: map-get($colors, 'midnight');
-	.img-ul {
-		background-color: map-get($colors, 'midnight');
-		border: none;
-	}
-	.img-ul-image {
-		margin-top: -20px;
-		margin-bottom: 20px;
-	}
-	.img-ul-upload {
-		background-color: map-get($colors, 'bloodreina');
-		box-shadow: none;
-		border: rgba(255, 255, 255, 0.6) !important;
-	}
-	.img-ul-button {
-		background-color:  map-get($colors, 'bloodreina');
-		color:  map-get($colors, 'snow');
-		padding: 10px 10px;
-		cursor: pointer;
-		opacity: 0.9;
-		font-size: 9px;
-		text-transform: uppercase;
-		letter-spacing: 2px;
-		width: 100%;
-		&:hover {
-			opacity: 2;
-			color: rgba(255, 255, 255, 0.6) !important;
-			-webkit-transition: 0.3s;
-			transition: 0.3s;
-		}
-	}
-	.img-ul-file-upload {
-		padding: 1px;
-	}
-	.img-ul-clear {
-		display: none;
-	}
-	.img-ul-container {
-		background-color: map-get($colors, 'midnight');
+    padding: 30px 0 0 30px;
+    background-color: map-get($colors, 'midnight');
+    .img-ul {
+        background-color: map-get($colors, 'midnight');
+        border: none;
+    }
+    .img-ul-image {
+        margin-top: -20px;
+        margin-bottom: 20px;
+    }
+    .img-ul-upload {
+        background-color: map-get($colors, 'bloodreina');
+        box-shadow: none;
+        border: rgba(255, 255, 255, 0.6) !important;
+    }
+    .img-ul-button {
+        background-color: map-get($colors, 'bloodreina');
+        color: map-get($colors, 'snow');
+        padding: 10px;
+        cursor: pointer;
+        opacity: 0.9;
+        font-size: 9px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        width: 100%;
+        &:hover {
+            opacity: 2;
+            color: rgba(255, 255, 255, 0.6) !important;
+            -webkit-transition: 0.3s;
+            transition: 0.3s;
+        }
+    }
+    .img-ul-file-upload {
+        padding: 1px;
+    }
+    .img-ul-clear {
+        display: none;
+    }
+    .img-ul-container {
+        background-color: map-get($colors, 'midnight');
 
-	}
+    }
 }
-
 @include breakpoint(mobile) {
-	.accountFormContainer {
-		.input-field-form-container { 
-			margin: 10px 0px;
-		}
-	}
+    .accountFormContainer {
+        .input-field-form-container {
+            margin: 10px 0;
+        }
+    }
 }
-
 @include breakpoint(mobilewide) {
-	.accountFormBtn { 
-		width: 49.2%;
-		margin: 30px 0px 20px;
-	}
+    .accountFormBtn {
+        //width: 49.2%;
+        //margin: 30px 0 20px;
+    }
 }
-
 @include breakpoint(tablet) {
-	.accountFormHeader {
-		text-align: center;
-	}
-	.accountFormContainer {
-		font-size: 19px;
-		margin: 40px 0 10px 0;
-	
-		.input-field-form-container {
-			width: 100%;
-			margin: 30px 0px;
-		}		
-	}
-	.buy {
-		margin: 55px 35px -10px 35px !important;
-	}
-	.accountFormBtn {
-		font-size: 15px;
-		text-transform: uppercase;
-		letter-spacing: 4px;
-	}
-	.accountFormHeader {
-		font-size: 30px;
-		margin-bottom: 50px;
-		text-transform: uppercase;
-		letter-spacing: 6px;
-	}
-	.input-field-form-container.imgPick {
-		.img-ul-button {
-			font-size: 18px;
-		}
-	}
-	.accountFormError {
-		font-size: 12px;
-		margin: -10px 0 20px;
-	}
-	.accountFormContainer img.formImg {
-		margin: -22px 0 0 30%;
-		height: 100px;
-		width: 100px;
-	}
-}
+    .accountFormHeader {
+        text-align: center;
+    }
+    .accountFormContainer {
+        font-size: 19px;
+        margin: 40px 0 10px;
 
+        .input-field-form-container {
+            width: 100%;
+            margin: 30px 0;
+        }
+    }
+    .buy {
+        margin: 55px 35px -10px !important;
+    }
+    .accountFormBtn {
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+    }
+    .accountFormHeader {
+        font-size: 30px;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+        letter-spacing: 6px;
+    }
+    .input-field-form-container.imgPick {
+        .img-ul-button {
+            font-size: 18px;
+        }
+    }
+    .accountFormError {
+        font-size: 12px;
+        margin: -10px 0 20px;
+    }
+    .accountFormContainer img.formImg {
+        margin: -22px 0 0 30%;
+        height: 100px;
+        width: 100px;
+    }
+}
 @include breakpoint(tabletwide) {
-	.accountFormBtn { 
-		width: 46%;
-		margin-left: 25px ;
-	}
+    .accountFormBtn {
+        //width: 46%;
+        //margin-left: 25px;
+    }
 }
 
 /*
 *  AUCTIONS
 */
 .auctionSellerContainer {
-	width: 100%;
-	background-color: map-get($colors, 'midnight');
-	border: 1px solid map-get($colors, 'silvermoon');
-	margin: 10px 0;
-	text-align: center;
+    width: 100%;
+    background-color: map-get($colors, 'midnight');
+    border: 1px solid map-get($colors, 'silvermoon');
+    margin: 10px 0;
+    text-align: center;
 }
 
 .auctionFishContainer {
-	width: 100%;
-	border: 1px solid map-get($colors, 'silvermoon');
-	background-color: map-get($colors, 'midnight');
-	margin: 10px 0;
+    width: 100%;
+    border: 1px solid map-get($colors, 'silvermoon');
+    background-color: map-get($colors, 'midnight');
+    margin: 10px 0;
 }
 
+.accountFormMessageCard {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: calc(100% - 40px);
+    padding: 0 20px 20px;
+    justify-content: space-between;
+	overflow: hidden;
+    box-sizing: border-box;
+
+    .messageCard {
+        box-sizing: border-box;
+        border: 3px solid map-get($colors, 'bloodreina');
+        width: 100%;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+		min-height: 200px;
+		overflow: hidden;
+
+        .messageCardTop {
+            display: flex;
+            flex-direction: column;
+            //justify-content: space-between;
+            background-color: map-get($colors, 'bloodreina');
+            div {
+                padding: 10px;
+				font-size: 13px;
+				font-weight: 900;
+                p {
+					font-weight: 900;
+					letter-spacing: 1px;;
+                    color: map-get($colors, 'midnight');
+                    margin: 0;
+                }
+            }
+            div:last-child {
+                text-align: right;
+            }
+
+            .messageCardTopDates {
+                color: map-get($colors, 'bloodreina');
+            }
+        }
+
+        .messageCardBottom {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            height: 100%;
+			padding: 10px;
+            p {
+                color: map-get($colors, 'bloodreina');
+                margin: 0;
+				margin-bottom: 5px;
+            }
+            .messageCardBottomButton {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                button {
+                    margin: 0;
+                    padding: 10px;
+                }
+            }
+			.messageCardBottomText {
+				display: flex;
+				flex-direction: column;
+			}
+        }
+    }
+}
 @include breakpoint(tablet) {
-	.auctionContainer {
-		display: flex;
-	}
-	.auctionSellerContainer { 
-		width: 38%;
-		margin-left: 2%;
-	}
-	.auctionFishContainer {
-		width: 60%;
+    .auctionContainer {
+        display: flex;
+    }
+    .auctionSellerContainer {
+        width: 38%;
+        margin-left: 2%;
+    }
+    .auctionFishContainer {
+        width: 60%;
+    }
+	.messageCard {
+		max-width: 48%;
 	}
 }
-
+@include breakpoint(tabletwide) {
+	.messageCardTop {
+		display: flex;
+		flex-direction: row !important;
+		justify-content: space-between;
+	}
+}
 .msg {
-	width: 85%;
-	margin: 20px 0 20px;
+    width: 85%;
+    margin: 20px 0;
 }
 
 .auctionFishImage {
-	float: left;
-	width: 200px;
-	margin-left: 19px;
-	img {
-	min-width: 200px;
-    max-width: 100%;
-	max-height: 100%;
-	}
+    float: left;
+    width: 200px;
+    margin-left: 19px;
+    img {
+        min-width: 200px;
+        max-width: 100%;
+        max-height: 100%;
+    }
 }
 
 .auctionss {
-	overflow: hidden;
+    overflow: hidden;
 }
 
 .auctionSellerDetail {
-	margin-top: 20px;
-	ul {
-		margin: 0px;
-		padding: 0;
-		list-style: none;
-		li {
-			text-transform: uppercase;
-			letter-spacing: 1px;
-			font-size: 13px;
-			margin: 0 20px;
-			background-color: map-get($colors, 'slate')	;
-			border: 1px solid map-get($colors, 'bloodreina');
-			padding: 5px;
-			text-align: left;
-			label {		
-				text-transform: none;
-				margin-right: 5px;
-				color: map-get($colors, 'silvermoon');
-				padding-left: 3px;
-				margin-bottom: 0px;
-			}
-		}
-	}
+    margin-top: 20px;
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 13px;
+            margin: 0 20px;
+            background-color: map-get($colors, 'slate');
+            border: 1px solid map-get($colors, 'bloodreina');
+            padding: 5px;
+            text-align: left;
+            label {
+                text-transform: none;
+                margin-right: 5px;
+                color: map-get($colors, 'silvermoon');
+                padding-left: 3px;
+                margin-bottom: 0;
+            }
+        }
+    }
 }
 
 .profileContainer {
-	width: 100%;
+    width: 100%;
 }
 
 .profileButton {
-	min-width: calc(100% - 40px);
-	margin-top: 20px;
-	margin-left: 0px;
-	border-radius: 2px;
-	cursor: pointer;
+    min-width: calc(100% - 40px);
+    margin-top: 20px;
+    margin-left: 0;
+    border-radius: 2px;
+    cursor: pointer;
+	float: none !important;
 }
 
 .centeredTitle {
-	text-align: center;
+    text-align: center;
 }
 
 .profileImage {
-	box-sizing: border-box;
-	text-align: center;
-	margin: 0 20px;
-	//background-color: map-get($colors, 'bloodreina');
-	img {
-		box-sizing: border-box;
-		border: 5px solid map-get($colors, 'bloodreina');
-		max-width: 100%;
-	}
+    box-sizing: border-box;
+    text-align: center;
+    margin: 0 20px;
+    //background-color: map-get($colors, 'bloodreina');
+    img {
+        box-sizing: border-box;
+        border: 5px solid map-get($colors, 'bloodreina');
+        max-width: 100%;
+    }
 }
 
 .auctionFishDetail {
-	width: 210px;
-	margin: 350px auto 10px;
-	ul {
-		padding: 0;
-		list-style: none;
-		margin-left: 0;
-		li {
-			padding: 3px;
-			margin: 0 20px;
-			background-color: map-get($colors, 'slate')	;
-			border: 1px solid map-get($colors, 'bloodreina');
-			text-align: left;
-			padding: 3px;
-			label {
-		
-				color: map-get($colors, 'silvermoon');
-			}
-		}
-	}
-	.auctionInput {
-		width: 97%;
-		margin: 15px 5px 15px 5px;
-		background: map-get($colors, 'midnight')	;
-		color: white;
-	}
+    width: 210px;
+    margin: 350px auto 10px;
+    ul {
+        padding: 0;
+        list-style: none;
+        margin-left: 0;
+        li {
+            padding: 3px;
+            margin: 0 20px;
+            background-color: map-get($colors, 'slate');
+            border: 1px solid map-get($colors, 'bloodreina');
+            text-align: left;
+            padding: 3px;
+            label {
+
+                color: map-get($colors, 'silvermoon');
+            }
+        }
+    }
+    .auctionInput {
+        width: 97%;
+        margin: 15px 5px;
+        background: map-get($colors, 'midnight');
+        color: white;
+    }
 }
 
 .auctionsButtons {
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin: 10px 5px;
-	button {
-		width: 40%;
-		margin: auto 3px;
-	}
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 5px;
+    button {
+        width: 40%;
+        margin: auto 3px;
+    }
 }
 
 .auctionSellerImage {
-	height: auto;
-	img {
-		width: 200px;
-		height: 200px;
-		border-radius: 50%;
-	}
+    height: auto;
+    img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+    }
 }
-
 @include breakpoint(mobilewide) {
-	.auctionFishDetail {
-		width: 300px;
-		float: right;
-		margin: 10px 0 10px;
-	}
+    .auctionFishDetail {
+        width: 300px;
+        float: right;
+        margin: 10px 0;
+    }
 }
-
 @include breakpoint(tabletwide) {
-	.auctionFishDetail {
-		width: 300px;
-		float: right;
-		margin: 10px 0 10px;
-	}
-	.auctionsButtons {
-		margin: 20px 5px;
-	}
-	.auctionInput {
-		width: 98%;
-		margin: 15px 10px 15px 2px;
-	}	
-	.auctionFishImage {
-		margin-top: 75px;
-		margin-left: 50px;
-		img {
-		min-width: 200px;
-		max-width: 100%;
-		max-height: 100%;
-		}
-	}
-	.msg {
-		width: 90%;
-		margin: 120px 0 20px;
-	}
+    .auctionFishDetail {
+        width: 300px;
+        float: right;
+        margin: 10px 0;
+    }
+    .auctionsButtons {
+        margin: 20px 5px;
+    }
+    .auctionInput {
+        width: 98%;
+        margin: 15px 10px 15px 2px;
+    }
+    .auctionFishImage {
+        margin-top: 75px;
+        margin-left: 50px;
+        img {
+            min-width: 200px;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+    .msg {
+        width: 90%;
+        margin: 120px 0 20px;
+    }
 }
-
-@include breakpoint(desktop) { 
-	.auctionFishDetail {
-		width: 450px;
-		float: right;
-		margin: 10px 0 10px;
-	}
+@include breakpoint(desktop) {
+    .auctionFishDetail {
+        width: 450px;
+        float: right;
+        margin: 10px 0;
+    }
 }
