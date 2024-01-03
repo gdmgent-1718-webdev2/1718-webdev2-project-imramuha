@@ -2,6 +2,9 @@
     <div class="dekstop-nav">
         <div class="dekstopNavBtn">
             <ul>
+                <li>
+                    <button routerLink="/">HOME</button>
+                </li>
                 <li> <!--  *ngIf=loggedIn if user logged in cclicking -> account -> else to login-->
                     <button *ngIf=loggedIn routerLink="/account/profile">MY ACCOUNT</button>
                     <button *ngIf=!loggedIn routerLink="login">LOGIN</button>
@@ -20,7 +23,7 @@
                 <li *ngIf=loggedIn><a  routerLink="contact-us">CONTACT US</a></li>
                 <li *ngIf=!loggedIn><a  routerLink="login">CONTACT US</a></li>
                 <li><span class='bullet'></span><a  routerLink="faq">FAQ</a></li>
-                <li><span class='bullet'></span><a >LANGUAGE</a></li>
+                <li disabled><span class='bullet'></span><a >LANGUAGE</a></li>
                 <li><span class='bullet'></span>
                     <a class="fa fa-search icon__on" aria-hidden="true"></a>
                 </li>

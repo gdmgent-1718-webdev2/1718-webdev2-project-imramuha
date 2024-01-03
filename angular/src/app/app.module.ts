@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {DatePipe} from '@angular/common';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -63,6 +63,7 @@ import {AccountService} from './services/account.service';
 // Problamatic
 import {NotifierModule, NotifierOptions} from 'angular-notifier';
 import {NgxUploaderModule} from 'ngx-uploader';
+import { RequestOptionsService, RequestOptionsProvider } from './services/RequestOptionsService';
 
 /**
  * Custom angular notifier options
@@ -164,10 +165,16 @@ const customNotifierOptions : NotifierOptions = {
         AccountService,
         GuestService,
         UserService,
+        RequestOptionsProvider,
         DatePipe, {
             provide: MAT_DATE_LOCALE,
             useValue: 'de-DE'
-        }
+        },
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: RequestOptionsService,
+            multi: true,
+          }
     ],
     bootstrap: [AppComponent]
 })

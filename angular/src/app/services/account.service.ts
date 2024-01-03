@@ -58,7 +58,7 @@ export class AccountService {
 
   editFish(info): Observable<any> {
     const data = JSON.stringify(info);
-    console.log(data)
+   
     return this.httpClient.post(`${this.baseUrl}/account/fishes/edit`, data, this.getRequestOptions());
   }
 

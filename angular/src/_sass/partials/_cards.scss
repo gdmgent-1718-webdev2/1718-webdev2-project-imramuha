@@ -65,6 +65,9 @@
     }
 }
 
+.accountFishCard.homeItem {
+    margin-top: 20px;
+}
 
 
 .accountFishCard {
@@ -99,13 +102,20 @@
         li {
             text-align: left;
             border-bottom: 3px solid map-get($colors, 'bloodreina');
-            color: rgba(255, 255, 255, 0.6);
             overflow: hidden;
-            //background-color: map-get($colors, 'bloodreina');
             padding: 5px;
+            color: white;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            font-weight: 500;
             &:last-child {
                 border-bottom: none;
                 text-align: center;
+            }
+            label {
+                font-size: 13px;
+                font-weight: 300;
+                color: map-get($colors, 'silvermoon');
             }
         }
     }

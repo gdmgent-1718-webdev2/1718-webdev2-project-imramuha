@@ -56,7 +56,7 @@ export class CreateMessageComponent implements OnInit {
             .showAllUsers()
             .subscribe(users => {
                 this._users = users[0];
-                console.log(this._users)
+    
             })
     } 
 

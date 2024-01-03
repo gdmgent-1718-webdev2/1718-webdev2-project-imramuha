@@ -46,7 +46,7 @@ export class CreateBidComponent implements OnInit {
     .showMyBids()
     .subscribe(fishes => {
       this._fishes = fishes[1];
-      console.log(fishes);
+      //console.log(fishes);
     })
   }
 

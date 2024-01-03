@@ -30,7 +30,7 @@ export class AccountComponent implements OnInit {
             .showUser()
             .subscribe(user => {
                 this._user = user[0];
-                console.log(this._user);
+                //console.log(this._user);
             });
     }
 
@@ -40,7 +40,7 @@ export class AccountComponent implements OnInit {
             .showMyMessages()
             .subscribe(messages => {
                 this.messages = messages[0];
-                console.log(messages);
+                //console.log(messages);
             })
     }
 

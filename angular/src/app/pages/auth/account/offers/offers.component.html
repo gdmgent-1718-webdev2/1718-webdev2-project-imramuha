@@ -11,12 +11,12 @@
         <div class="accountFishCardDetail">
           <ul>
               <li>Highest offer: €{{ offer.bid }}</li>
-              <li>Started at: {{ offer.started_at }}</li>
-              <li>Ends At:{{ offer.ended_at }} </li>
-              <li>Seller: {{ offer.seller.email }} </li>
-              <li>Fish name: {{ offer.fish.name }} </li>
-              <li>Highest offerder:{{ offer.bidder.email }} </li>
-              <li>Status: {{ offer.statuses.name }} </li>
+              <li>Started at:<br> {{ offer.started_at }}</li>
+              <li>Ends At:<br> {{ offer.ended_at }} </li>
+              <li>Seller:<br> {{ offer.seller.email }} </li>
+              <li>Fish name:<br> {{ offer.fish.name }} </li>
+              <li>Highest bidder:<br> {{ offer.bidder.email }} </li>
+              <li>Status:<br> {{ offer.statuses.name }} </li>
               <li><button class="accountFishCardButton gavelButton" routerLink="/auctions/select/{{offer.id}}" >BID<i class="fas fa-gavel"></i></button></li>
           </ul>
         </div>

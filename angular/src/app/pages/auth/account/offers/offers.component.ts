@@ -26,7 +26,7 @@ export class OffersComponent implements OnInit {
     .showMyOffers()
     .subscribe(offers => {
       this.offers = offers[0];
-      console.log(offers);
+  
     })
   }
 

@@ -1,89 +1,143 @@
 <div class="homeContainer">
-  <div class="homeImageContainer">
-    <img src="../assets/img/homeImage.png">
-    <div class="homeImageText"><h2>FISHES FROM ALL AROUND THE WORLD</h2><br/><h3>KOI FISHES</h3><p>Ochiba, Kohai, Yahakuma</p></div>
-  </div>
-
-  <div class="homeItem first">
-
-        <h4 class="accountFormHeader centeredTitles">HOW TO USE AQUALOBBY</h4>
-        <div class="homeItemSeller">
-            <h4 class="faqQuestion title"><strong>SELLER</strong></h4>
-            <p>•  create an account  •</p>
-            <p>•  go to your account  •</p>
-            <p>•  add a fish  •</p>
-            <p>•  publish your auction  • </p>
-            <p>•  discuss the payment & shipping with winner  •</p>
-            <p>•  done  • </p>
-        </div>
-        <div class="homeItemSeller">
-            <h4 class="faqQuestion title"><strong>BUYER</strong></h4>
-            <p>•  create an account  •</p>
-            <p>•  go to auctions  •</p>
-            <p>•  filter or search for something you desire  •</p>
-            <p>•  place a bid & win •</p>
-            <p>•  discuss the payment & shipping with seller  •</p>
-            <p>•  done  •</p>
+    <div class="homeImageContainer">
+        <img src="../assets/img/homeImage.png">
+            <div class="homeImageText">
+                <h2>FISHES FROM ALL AROUND THE WORLD</h2><br/>
+                <h3>KOI FISHES</h3>
+                <p>Ochiba, Kohai, Yahakuma</p>
+            </div>
         </div>
 
-  </div> 
-                                                     
-  <div  class="homeItem whyUs">
-          <h4 class="accountFormHeader  centeredTitles">WHY CHOOSE AQUALOBBY?</h4>
+        <div class="homeItem first">
+
+            <h4 class="accountFormHeader centeredTitles">HOW TO USE AQUALOBBY</h4>
+            <div class="homeItemSeller">
+                <h4 class="faqQuestion title">
+                    <strong>SELLER</strong>
+                </h4>
+                <p>• create an account •</p>
+                <p>• go to your account •</p>
+                <p>• add a fish •</p>
+                <p>• publish your auction •
+                </p>
+                <p>• discuss the payment & shipping with winner •</p>
+                <p>• done •
+                </p>
+            </div>
+            <div class="homeItemSeller">
+                <h4 class="faqQuestion title">
+                    <strong>BUYER</strong>
+                </h4>
+                <p>• create an account •</p>
+                <p>• go to auctions •</p>
+                <p>• filter or search for something you desire •</p>
+                <p>• place a bid & win •</p>
+                <p>• discuss the payment & shipping with seller •</p>
+                <p>• done •</p>
+            </div>
+
+        </div>
+
+        <div class="homeItem whyUs">
+            <h4 class="accountFormHeader  centeredTitles">WHY CHOOSE AQUALOBBY?</h4>
 
             <div className="whyUsBox">
                 <span class='whyUsIcon'>
-                  <a class="fab fa-creative-commons-nc-eu" aria-hidden="true"></a>
+                    <a class="fab fa-creative-commons-nc-eu" aria-hidden="true"></a>
                 </span>
-              
-              <h2><strong>NO SERVICE FEE</strong></h2>
-              <p>100% free, no fee needed to make use of our service</p>
+
+                <h2>
+                    <strong>NO SERVICE FEE</strong>
+                </h2>
+                <p>100% free, no fee needed to make use of our service</p>
             </div>
 
             <div className="whyUsBox">
                 <span class='whyUsIcon'>
                     <a class="fas fa-eye" aria-hidden="true"></a>
-                  </span>
-              <h2><strong>LIVE BIDDING</strong></h2>
-              <p>See whenever your concurrent raises their bid and so you can ensure your win</p>
+                </span>
+                <h2>
+                    <strong>LIVE BIDDING</strong>
+                </h2>
+                <p>See whenever your concurrent raises their bid and so you can ensure your win</p>
             </div>
 
             <div className="whyUsBox">
                 <span class='whyUsIcon'>
                     <a class="fas fa-headset" aria-hidden="true"></a>
-                  </span>
-              <h2><strong>24/7 SERVICE</strong></h2>
-              <p>Customer Service which is available 24/7 to help you out when you are in need</p>
+                </span>
+                <h2>
+                    <strong>24/7 SERVICE</strong>
+                </h2>
+                <p>Customer Service which is available 24/7 to help you out when you are in need</p>
             </div>
 
             <div className="whyUsBox">
                 <span class='whyUsIcon'>
                     <a class="fas fa-globe" aria-hidden="true"></a>
-                  </span>
-              <h2><strong>TRUSTED</strong></h2>
-              <p>Over 10 000 auctions done with sellers and buyers from all around the world</p>
+                </span>
+                <h2>
+                    <strong>TRUSTED</strong>
+                </h2>
+                <p>Over 10 000 auctions done with sellers and buyers from all around the world</p>
             </div>
-  </div>
-                                           
-  <div class="homeItem latestBidding">
-
-          <h4 class="accountFormHeader  centeredTitles">LATEST ONGOING AUCTIONS</h4>
-          <button *ngIf=!loggedIn class="accountFishCardButton"  routerLink="login">LOGIN</button>
-                                      
-        <div  class="accountFishCard"  *ngFor="let _bid of bids">
-        <div class="accountFishCardHeader"><img src="{{_bid.fish.image}}" ></div>
-        <div class="accountFishCardDetail">
-          <ul>
-              <li>{{ _bid.fish.name }}</li>
-              <li>{{ _bid.fish.subcategory.categories.name }} - {{ _bid.fish.subcategory.name }}</li>
-              <li>{{ _bid.fish.birthdate }}</li>
-              <li>{{ _bid.fish.sex }}</li>
-              <li>{{ _bid.fish.size }}cm</li>
-              <li>€ {{ _bid.bid }}</li>
-              <li><countdown (reached)="callback($event)" [text]="text" units="Days | Hours | Minutes | Seconds" showZeros="true"  end="{{ _bid.ended_at }}"></countdown></li>
-              <li><button class="accountFishCardButton gavelButton" routerLink="/auctions/select/{{_bid.id}}" >BID           <i class="fas fa-gavel"></i></button></li>
-          </ul>
         </div>
-      </div>
-  </div>
-</div>
+
+        <div class="homeItem latestBidding">
+
+            <h4 class="accountFormHeader  centeredTitles">LATEST ONGOING AUCTIONS</h4>
+            <button *ngIf=!loggedIn class="accountFishCardButton" routerLink="login">LOGIN</button>
+
+            <div class="accountFishCard homeItem" *ngFor="let _bid of bids">
+                <div class="accountFishCardHeader">
+                    <img src="{{_bid.fish.image}}"></div>
+                    <div class="accountFishCardDetail">
+                        <ul>
+                            <li>
+                                <label>Name:
+                                </label>
+                                {{_bid.fish.name}}</li>
+                            <li>
+                                <label>Category:
+                                </label>
+                                {{ _bid.fish.subcategory.categories.name }}</li>
+                            <li>
+                                <label>Subcategory:
+                                </label>
+                                {{ _bid.fish.subcategory.name }}</li>
+                            <li>
+                                <label>Birthdate:
+                                </label>
+                                {{ _bid.fish.birthdate }}</li>
+                            <li>
+                                <label>Gender:
+                                </label>
+                                {{ _bid.fish.sex }}</li>
+                            <li>
+                                <label>Size:
+                                </label>
+                                {{ _bid.fish.size }}
+                                cm</li>
+                            <li>
+                                <label>Started at:
+                                </label><br>
+                                {{ _bid.started_at }}
+                            </li>
+                            <li>
+                                <label>Ends at:
+                                </label><br>
+                                {{ _bid.ended_at }}
+                            </li>
+
+                            <li>
+                                <button
+                                    class="accountFishCardButton gavelButton"
+                                    routerLink="/auctions/select/{{_bid.id}}">BID
+                                    <i class="fas fa-gavel"></i>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>

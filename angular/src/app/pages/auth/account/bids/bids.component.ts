@@ -30,7 +30,7 @@ export class BidsComponent implements OnInit {
     .showMyBids()
     .subscribe(bids => {
       this.bids = bids[0];
-      console.log(bids);
+      //console.log(bids);
     })
   }
 

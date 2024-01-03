@@ -23,7 +23,7 @@ export class FishesComponent implements OnInit {
             .showAllFishes()
             .subscribe(fishes => {
                 this.fishes = fishes[0];
-                console.log(fishes);
+         
 
             })
     }
@@ -34,7 +34,7 @@ export class FishesComponent implements OnInit {
             .accountService
             .deleteFish(id)
             .subscribe(response => {
-                console.log(response);
+          
                 this.getAllFishes();;
             });
 

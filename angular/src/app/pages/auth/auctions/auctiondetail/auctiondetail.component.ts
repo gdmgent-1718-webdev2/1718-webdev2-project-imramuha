@@ -34,14 +34,14 @@ export class AuctiondetailComponent implements OnInit {
 
   getAuction() {
     const id = this.route.snapshot.params['id'];
-    console.log(id);
+  
   
     this.accountService
     .showAuction(id)
     .subscribe(bid => {  
-      console.log(bid),
+  
         this._bid = bid[0];
-        console.log(this._bid);
+   
 
         this.currentBid = this._bid.bid;
         
@@ -58,7 +58,7 @@ export class AuctiondetailComponent implements OnInit {
       //API call
       .raiseBid(this._bid)
       .subscribe(response => {
-        console.log(response);
+
         this.router.navigate(['/auctions']);
         this.notifier.notify("success", response.response);
       })

@@ -40,8 +40,9 @@ throw new Error('Method not implemented.');
 
   ngOnInit() {
     this.AuthStatus.authStatus.subscribe(value => this.loggedIn = value);
-    this.getAllAuctions();
-
+    if(this.loggedIn = true) {
+      this.getAllAuctions();
+    }
   }
   
   getAllAuctions(){
@@ -49,11 +50,6 @@ throw new Error('Method not implemented.');
     .showAuctions()
     .subscribe(bids => {
       this.bids = bids[0];
-      console.log(this.bids);
-
-      //this.bids.ended_at = Date.parse(this.bids.ended_at);
-      console.log(this.bids);
-
     })
   }
 }

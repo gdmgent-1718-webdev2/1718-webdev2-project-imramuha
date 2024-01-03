@@ -50,21 +50,17 @@ export class PublishBidComponent implements OnInit {
 
   getOneBid() {
     const id = this.route.snapshot.params['id'];
-    console.log(id);
+
   
     this.accountService
     .showBid(id)
     .subscribe(bid => {  
-      console.log(bid),
+
         this._bid = bid[0];
-        console.log(this._bid);
+
         this._bid.id = id;
         this._bid.days_or_hours = 'hours';
-        console.log(this._bid.id)
-        console.log(this._bid.bid);
-        console.log(this._bid.fish_id);
-        console.log(this._bid.started_at);
-        console.log(this._bid.ended_at);
+
 
         // date to hours
         const _started_at: string = this._bid.started_at;
@@ -101,7 +97,7 @@ export class PublishBidComponent implements OnInit {
     //API call
     .publishBid(this._bid)
     .subscribe(response => {
-      console.log(response);
+   
       this.router.navigate(['/account/bids']);
       this.notifier.notify("success", response.response);
     

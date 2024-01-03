@@ -51,7 +51,7 @@ export class EditFishComponent implements OnInit {
                 this.fish = fish[0];
                 this.fish.id = id;
                 this.file_src = this.fish.image as string; // Cast image to string
-                console.log(this.fish);
+     
             });
     }
 
@@ -108,7 +108,7 @@ export class EditFishComponent implements OnInit {
 
     updateFish() {
         this.fish.birthdate = moment(this.fish.birthdate).format('YYYY-MM-DD');
-        console.log(this.fish.image)
+    
 
         // Now you can send the updated fish data through the API
         this

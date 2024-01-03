@@ -131,7 +131,6 @@
     letter-spacing: 2px;
 }
 
-/* Set a style for the submit button */
 .passwordResetHeader {
     background-color: map-get($colors, 'bloodreina');
     color: white;
@@ -293,53 +292,39 @@
 }
 
 .accountFormContainer img.formImg {
-    margin: -10px auto 0;
     height: 50px;
     width: 50px;
 }
 
 .input-field-form-container.imgPick {
-    padding: 30px 0 0 30px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
     background-color: map-get($colors, 'midnight');
-    .img-ul {
-        background-color: map-get($colors, 'midnight');
-        border: none;
-    }
-    .img-ul-image {
-        margin-top: -20px;
+    font-family: 'Muli', sans-serif;
+    font-size: 15px;
+    label {
+        font-size: 20px;
+        color: map-get($colors, 'silvermoon');
+        //font-weight: 900; 
+        letter-spacing: 1px;
         margin-bottom: 20px;
     }
-    .img-ul-upload {
+    button, input{
         background-color: map-get($colors, 'bloodreina');
-        box-shadow: none;
-        border: rgba(255, 255, 255, 0.6) !important;
-    }
-    .img-ul-button {
-        background-color: map-get($colors, 'bloodreina');
-        color: map-get($colors, 'snow');
-        padding: 10px;
+        color: white;
+        padding: 10px 20px;
+        border: none;
         cursor: pointer;
         opacity: 0.9;
-        font-size: 9px;
-        text-transform: uppercase;
         letter-spacing: 2px;
-        width: 100%;
         &:hover {
             opacity: 2;
             color: rgba(255, 255, 255, 0.6) !important;
             -webkit-transition: 0.3s;
             transition: 0.3s;
         }
-    }
-    .img-ul-file-upload {
-        padding: 1px;
-    }
-    .img-ul-clear {
-        display: none;
-    }
-    .img-ul-container {
-        background-color: map-get($colors, 'midnight');
-
     }
 }
 @include breakpoint(mobile) {
@@ -392,7 +377,6 @@
         margin: -10px 0 20px;
     }
     .accountFormContainer img.formImg {
-        margin: -22px 0 0 30%;
         height: 100px;
         width: 100px;
     }
@@ -416,10 +400,14 @@
 }
 
 .auctionFishContainer {
+    box-sizing: border-box;
     width: 100%;
     border: 1px solid map-get($colors, 'silvermoon');
     background-color: map-get($colors, 'midnight');
     margin: 10px 0;
+    form {
+        height: 100%
+    }
 }
 
 .accountFormMessageCard {
@@ -516,21 +504,6 @@
 		justify-content: space-between;
 	}
 }
-.msg {
-    width: 85%;
-    margin: 20px 0;
-}
-
-.auctionFishImage {
-    float: left;
-    width: 200px;
-    margin-left: 19px;
-    img {
-        min-width: 200px;
-        max-width: 100%;
-        max-height: 100%;
-    }
-}
 
 .auctionss {
     overflow: hidden;
@@ -568,8 +541,7 @@
 
 .profileButton {
     min-width: calc(100% - 40px);
-    margin-top: 20px;
-    margin-left: 0;
+    margin: 20px 0;
     border-radius: 2px;
     cursor: pointer;
 	float: none !important;
@@ -583,7 +555,6 @@
     box-sizing: border-box;
     text-align: center;
     margin: 0 20px;
-    //background-color: map-get($colors, 'bloodreina');
     img {
         box-sizing: border-box;
         border: 5px solid map-get($colors, 'bloodreina');
@@ -591,43 +562,64 @@
     }
 }
 
-.auctionFishDetail {
-    width: 210px;
-    margin: 350px auto 10px;
-    ul {
-        padding: 0;
-        list-style: none;
-        margin-left: 0;
-        li {
-            padding: 3px;
-            margin: 0 20px;
-            background-color: map-get($colors, 'slate');
-            border: 1px solid map-get($colors, 'bloodreina');
-            text-align: left;
-            padding: 3px;
-            label {
 
-                color: map-get($colors, 'silvermoon');
-            }
+.auctionsFishDetail {
+    padding: 0 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .auctionFishImage {
+        padding: 0px;
+        box-sizing: border-box;
+        width: 48%;
+        img {
+            width: 100%;
+            border: 5px solid map-get($colors, 'bloodreina');
         }
     }
-    .auctionInput {
-        width: 97%;
-        margin: 15px 5px;
-        background: map-get($colors, 'midnight');
-        color: white;
+    .auctionsFishDetailTop {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+        margin-bottom: 20px;
+        .auctionFishDetail {
+            width: 48%;
+            ul {
+                padding: 0;
+                list-style: none;
+                margin: 0px;
+                li {
+                    margin: 0px;
+                    padding: 5px;
+                    background-color: map-get($colors, 'slate');
+                    border: 1px solid map-get($colors, 'bloodreina');
+                    text-align: left;
+                    label {
+                        color: map-get($colors, 'silvermoon');
+                    }
+                }
+            }
+            .auctionInput {
+                padding: 5px;
+                background: map-get($colors, 'midnight');
+                color: white;
+                box-sizing: border-box;
+            }
+        }
+        
     }
+    
 }
 
 .auctionsButtons {
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 10px 5px;
+    justify-content: space-between;
     button {
         width: 40%;
-        margin: auto 3px;
     }
 }
 
@@ -640,43 +632,12 @@
     }
 }
 @include breakpoint(mobilewide) {
-    .auctionFishDetail {
-        width: 300px;
-        float: right;
-        margin: 10px 0;
-    }
+
 }
 @include breakpoint(tabletwide) {
     .auctionFishDetail {
         width: 300px;
-        float: right;
-        margin: 10px 0;
-    }
-    .auctionsButtons {
-        margin: 20px 5px;
-    }
-    .auctionInput {
-        width: 98%;
-        margin: 15px 10px 15px 2px;
-    }
-    .auctionFishImage {
-        margin-top: 75px;
-        margin-left: 50px;
-        img {
-            min-width: 200px;
-            max-width: 100%;
-            max-height: 100%;
-        }
-    }
-    .msg {
-        width: 90%;
-        margin: 120px 0 20px;
     }
 }
 @include breakpoint(desktop) {
-    .auctionFishDetail {
-        width: 450px;
-        float: right;
-        margin: 10px 0;
-    }
 }

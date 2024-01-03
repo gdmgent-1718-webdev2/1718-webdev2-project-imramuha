@@ -33,7 +33,7 @@ export class EditProfileComponent implements OnInit {
             .selectUser()
             .subscribe(user => {
                 this._user = user[0];
-                console.log(this._user);
+            
             });
     }
 
@@ -72,7 +72,7 @@ export class EditProfileComponent implements OnInit {
 
     /// function for update
     updateProfile() {
-      console.log(this._user.image)
+
 
       // Now you can send the updated fish data through the API
       this
