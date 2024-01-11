@@ -1,0 +1,7 @@
+generate key, seed database
+
+cd laravel
+php artisan serve
+
+cd angular
+ng serve
