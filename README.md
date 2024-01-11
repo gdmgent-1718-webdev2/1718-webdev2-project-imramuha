@@ -7,7 +7,7 @@ Student: Imran Muhammad
 
 Productiedossier
 ----------------
-Link: https://gdmgent-1718-webdev2.github.io/1718-webdev2-project-imramuha
+
 
 ### Installatie
 
