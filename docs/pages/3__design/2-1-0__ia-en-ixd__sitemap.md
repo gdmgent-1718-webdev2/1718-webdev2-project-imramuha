@@ -8,5 +8,4 @@ title: Sitemap
 
 ## Backoffice
 ----------
-![Sitemap]({{  "/assets/images/design/sitemap-backoffice.png" }})
-    <img rel="stylesheet" href="{{ site.baseurl }}{% link /images/design/sitemap-backoffice.png %}">
+![Sitemap]({{  "/assets/images/design/sitemap-backoffice.png" | absolute_url }})
