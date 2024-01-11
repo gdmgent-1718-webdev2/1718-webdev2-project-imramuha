@@ -8,4 +8,4 @@ title: Sitemap
 
 ## Backoffice
 ----------
-![Sitemap]({{  "/assets/images/design/sitemap-backoffice.png" | absolute_url }})
+![Sitemap]({{  "/assets/images/design/sitemap-backoffice.png" }})
