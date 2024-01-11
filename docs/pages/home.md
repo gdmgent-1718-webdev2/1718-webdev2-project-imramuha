@@ -3,7 +3,7 @@ layout   : default
 permalink: home
 # Custom Page Variables
 # ─────────────────────
-title: Opdracht WEBDEV-II
+title: Aqualobby
 ---
 
 {{ site.title }}
