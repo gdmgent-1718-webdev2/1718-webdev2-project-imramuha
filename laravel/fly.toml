@@ -4,6 +4,8 @@
 #
 
 app = "aqualobby"
+kill_signal = "SIGINT"
+kill_timeout = 5
 primary_region = "ams"
 console_command = "php /var/www/html/artisan tinker"
 
