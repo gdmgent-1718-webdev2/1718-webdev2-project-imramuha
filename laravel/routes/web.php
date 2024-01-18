@@ -13,7 +13,7 @@
 
 Route::middleware(['auth:web'])->group(function () {
 
-    Route::get('backoffice/dashboard', 'backoffice\DashboardController@index');
+    Route::get('backoffice/dashboard', 'Backoffice\DashboardController@index');
 });
 
 Route::group(['prefix' => 'backoffice', 'namespace' => 'Backoffice'], function () {
@@ -110,9 +110,7 @@ Route::get('/moderator', 'Auth\ModeratorController@index');
 
 Route::get('/no-acces', 'Auth\NoAccesController@index');
 
-Route::get('/', function () {
-    return redirect('backoffice/dashboard');
-});
+Route::get('/', 'Backoffice\DashboardController@index');
 
 
 Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');

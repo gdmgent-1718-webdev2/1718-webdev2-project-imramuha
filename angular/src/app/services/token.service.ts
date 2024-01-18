@@ -6,10 +6,10 @@ import { Observable } from 'rxjs';
 export class TokenService {
 
   private iss = { 
-    login: "http://127.0.0.1:8000/api/login",
-    register: "http://127.0.0.1:8000/api/register",
-    fishes: "http://127.0.0.1:8000/api/account/fishes",
-    fishesCreate: "http://127.0.0.1:8000/api/account/fishes/create",
+    login: "https://imranm19.sg-host.com/api/login",
+    register: "https://imranm19.sg-host.com/api/register",
+    fishes: "https://imranm19.sg-host.com/api/account/fishes",
+    fishesCreate: "https://imranm19.sg-host.com/api/account/fishes/create",
   }
 
   constructor(private httpClient: HttpClient) { }

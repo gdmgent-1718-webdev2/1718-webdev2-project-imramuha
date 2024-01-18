@@ -5,7 +5,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 @Injectable()
 export class AuthService {
 
-  private baseUrl = 'http://127.0.0.1:8000/api'
+  private baseUrl = 'https://imranm19.sg-host.com/api'
 
   constructor(private http:HttpClient) { }
 

@@ -20,7 +20,7 @@ title: Backoffice
 
 7. run <code>php artisan serve</code>
 
-8. Je backoffice zal beschikbaar zijn op: http://127.0.0.1:8000
+8. Je backoffice zal beschikbaar zijn op: 35.214.132.93
 
 ## Login gegevens zijn:
 

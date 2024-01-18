@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class AccountService {
 
-  private baseUrl = 'http://127.0.0.1:8000/api';
+  private baseUrl = 'https://imranm19.sg-host.com/api';
 
   constructor(private httpClient: HttpClient) { }
 
