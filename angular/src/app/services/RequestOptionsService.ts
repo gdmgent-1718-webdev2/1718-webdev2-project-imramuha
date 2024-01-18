@@ -24,23 +24,12 @@ export class RequestOptionsService implements HttpInterceptor {
             .handle(request)
             .pipe(catchError((error : any) => {
                 if (error.status === 401) {
-                    console.log('Unauthorized response, logging out');
 
                     // Remove token and redirect to login
                     localStorage.removeItem('token');
 
-                    return timer(2000).pipe(
-                      switchMap(() => {
-                       //window.location.href = 'https://aqualobby.netlify.app/login';
-                       //window.location.href = '/login';
-                    this
-                        .notifier
-                        .notify("info", "Token expired, logging user out.");
+                    return new Observable<HttpEvent<any>>();
 
-                        // Return an empty observable to prevent the original request from reaching the server
-                        return new Observable<HttpEvent<any>>();
-                      })
-                    );
                 }
 
                 return throwError(error);
