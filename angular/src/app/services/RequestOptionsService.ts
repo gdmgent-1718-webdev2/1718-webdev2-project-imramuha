@@ -31,7 +31,8 @@ export class RequestOptionsService implements HttpInterceptor {
 
                     return timer(2000).pipe(
                       switchMap(() => {
-                        window.location.href = '/login';
+                       window.location.href = 'https://aqualobby.netlify.app/login';
+                       //window.location.href = '/login';
                     this
                         .notifier
                         .notify("info", "Token expired, logging user out.");
